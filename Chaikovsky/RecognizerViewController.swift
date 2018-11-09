@@ -129,15 +129,16 @@ extension RecognizerViewController: ARSCNViewDelegate {
                 imageNode.eulerAngles.x = -.pi / 2
                 node.addChildNode(imageNode)
 
-                let annotationPlane = SCNPlane(width: plane.width * 1.5, height: plane.width * 0.5)
-                let annotationNode = SCNNode(geometry: annotationPlane)
-                let view = PopUpView(frame: CGRect(x: 0, y: 0, width: 300, height: 120))
-                annotationNode.geometry?.firstMaterial?.diffuse.contents = view
-                annotationNode.eulerAngles.x = -.pi / 2
-                // TODO: calculate delta
-                let delta = simd_float3(0, 0, -5.5)
-                annotationNode.simdPosition += delta
-                node.addChildNode(annotationNode)
+//                let annotationPlane = SCNPlane(width: plane.width * 1.5, height: plane.width * 0.5)
+//                let annotationNode = SCNNode(geometry: annotationPlane)
+//                let annotationView = PopUpView(frame: CGRect(x: 0, y: 0, width: 300, height: 120))
+//                annotationView.configure(with: "Какой-то текст")
+//                annotationNode.geometry?.firstMaterial?.diffuse.contents = annotationView
+//                annotationNode.eulerAngles.x = -.pi / 2
+//                // TODO: calculate delta
+//                let delta = simd_float3(0, 0, -5.5)
+//                annotationNode.simdPosition += delta
+//                node.addChildNode(annotationNode)
             }
         }
     }

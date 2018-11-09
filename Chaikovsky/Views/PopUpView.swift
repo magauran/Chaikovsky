@@ -29,6 +29,14 @@ class PopUpView: UIView {
         drawPopUp(width: rect.width, height: rect.height)
     }
 
+    func configure(with text: String) {
+        let label = UILabel(frame: frame)
+        label.text = text
+        addSubview(label)
+    }
+
+    // MARK: - Private methods
+
     private func drawPopUp(width: CGFloat, height: CGFloat) {
         let startingPoint = CGPoint(x: radius, y: 0)
         let upperRightCenter = CGPoint(x: width - radius, y: radius)
@@ -56,7 +64,7 @@ class PopUpView: UIView {
 
         path.close()
 
-        UIColor.gray.setFill()
+        UIColor.white.setFill()
         UIColor.clear.setStroke()
 
         path.fill()
