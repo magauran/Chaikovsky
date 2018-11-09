@@ -24,7 +24,7 @@ class HomeTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell: FeatureTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         return cell
     }
 
