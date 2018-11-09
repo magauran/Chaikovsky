@@ -52,6 +52,72 @@
             </objects>
             <point key="canvasLocation" x="1455" y="132"/>
         </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="h7L-NQ-csS">
+            <objects>
+                <viewController id="krV-d9-hhv" customClass="PreviewViewController" customModule="Chaikovsky" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xWf-EK-Xcv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рахманинов С. В." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKw-3a-0CG">
+                                <rect key="frame" x="10" y="30" width="355" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="OVG-bJ-gIk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1890 - 1920" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ra-2u-0E9">
+                                <rect key="frame" x="10" y="83" width="94" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="великий русский композитор" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKS-fR-bro">
+                                <rect key="frame" x="10" y="104" width="212" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ye-Ao-stK" customClass="MoreButton" customModule="Chaikovsky" customModuleProvider="target">
+                                <rect key="frame" x="239" y="88" width="120" height="34"/>
+                                <color key="backgroundColor" red="0.8907836294" green="0.8907836294" blue="0.8907836294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="9g8-P4-8WY"/>
+                                </constraints>
+                                <state key="normal" title="Подробнее">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aKw-3a-0CG" firstAttribute="top" secondItem="wWQ-2b-RJ4" secondAttribute="top" constant="10" id="4bg-fi-DYA"/>
+                            <constraint firstItem="8Ye-Ao-stK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9ra-2u-0E9" secondAttribute="trailing" constant="10" id="HPQ-9L-U33"/>
+                            <constraint firstItem="9ra-2u-0E9" firstAttribute="top" secondItem="aKw-3a-0CG" secondAttribute="bottom" constant="3" id="UDK-Sq-qMK"/>
+                            <constraint firstItem="aKw-3a-0CG" firstAttribute="leading" secondItem="wWQ-2b-RJ4" secondAttribute="leading" constant="10" id="gW6-eQ-4aQ"/>
+                            <constraint firstItem="9ra-2u-0E9" firstAttribute="leading" secondItem="wWQ-2b-RJ4" secondAttribute="leading" constant="10" id="mtq-nu-5Ib"/>
+                            <constraint firstItem="8Ye-Ao-stK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KKS-fR-bro" secondAttribute="trailing" constant="10" id="ojc-Yk-AbW"/>
+                            <constraint firstItem="KKS-fR-bro" firstAttribute="top" secondItem="9ra-2u-0E9" secondAttribute="bottom" id="ooz-uB-Q9c"/>
+                            <constraint firstItem="wWQ-2b-RJ4" firstAttribute="trailing" secondItem="aKw-3a-0CG" secondAttribute="trailing" constant="10" id="qE5-Pk-zGW"/>
+                            <constraint firstItem="KKS-fR-bro" firstAttribute="leading" secondItem="wWQ-2b-RJ4" secondAttribute="leading" constant="10" id="sKH-91-Aew"/>
+                            <constraint firstItem="wWQ-2b-RJ4" firstAttribute="trailing" secondItem="8Ye-Ao-stK" secondAttribute="trailing" constant="16" id="y6D-fN-c0Z"/>
+                            <constraint firstItem="8Ye-Ao-stK" firstAttribute="bottom" secondItem="KKS-fR-bro" secondAttribute="bottom" id="zqg-z9-WgA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wWQ-2b-RJ4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PdO-oW-cYf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2248.8000000000002" y="-690.40479760119945"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="jyT-vF-0r5">
             <objects>
