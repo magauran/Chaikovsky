@@ -24,6 +24,7 @@ class RecognizerViewController: UIViewController {
         let fpc = FloatingPanelController()
         fpc.delegate = self
         fpc.surfaceView.cornerRadius = 12.0
+        fpc.surfaceView.grabberHandle.isHidden = true
         return fpc
     }()
 
@@ -72,11 +73,10 @@ class RecognizerViewController: UIViewController {
     }
 
     private func showFloatingPanel() {
-       if self.floatingPanelIsShown != false && [FloatingPanelPosition.half, FloatingPanelPosition.full].contains(self.fpc.position) { return }
-        guard let contentVC = self.storyboard?.instantiateViewController(withIdentifier: DetailViewController.className) as? DetailViewController else { return }
-        contentVC.configure(with: currentPortrait)
-        self.fpc.show(contentVC, sender: nil)
-        self.fpc.track(scrollView: contentVC.tableView)
+       if self.floatingPanelIsShown != false { return }
+        guard let contentVC = self.storyboard?.instantiateViewController(withIdentifier: PreviewViewController.className) as? PreviewViewController else { return }
+        //contentVC.configure(with: currentPortrait)
+        self.fpc.set(contentViewController: contentVC)
         self.fpc.addPanel(toParent: self, belowView: nil, animated: true)
         self.floatingPanelIsShown = true
     }
@@ -184,7 +184,6 @@ extension RecognizerViewController: ARSCNViewDelegate {
 
             }
 
-
         }
     }
 
@@ -196,6 +195,12 @@ extension RecognizerViewController: FloatingPanelControllerDelegate {
 
     func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
         return DetailFloatingPanelLayout()
+    }
+
+    func floatingPanelDidEndDragging(_ vc: FloatingPanelController, withVelocity velocity: CGPoint, targetPosition: FloatingPanelPosition) {
+        if targetPosition == .tip {
+            floatingPanelIsShown = false
+        }
     }
 
 }

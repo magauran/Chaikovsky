@@ -2,15 +2,21 @@ PODS:
   - FloatingPanel (1.1.0)
 
 DEPENDENCIES:
-  - FloatingPanel
+  - FloatingPanel (from `https://github.com/SCENEE/FloatingPanel.git`, commit `630580beb62475c43f7c0efffa1ee9e0cba99643`)
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - FloatingPanel
+EXTERNAL SOURCES:
+  FloatingPanel:
+    :commit: 630580beb62475c43f7c0efffa1ee9e0cba99643
+    :git: https://github.com/SCENEE/FloatingPanel.git
+
+CHECKOUT OPTIONS:
+  FloatingPanel:
+    :commit: 630580beb62475c43f7c0efffa1ee9e0cba99643
+    :git: https://github.com/SCENEE/FloatingPanel.git
 
 SPEC CHECKSUMS:
   FloatingPanel: 585c9ef2011bc31cbcd14756f2a09fb29ade6b45
 
-PODFILE CHECKSUM: 5a43d7c11acd5863c5a59678f9529209e747533d
+PODFILE CHECKSUM: ea0af379bfc7dd118f742fa78480f55b494cae90
 
 COCOAPODS: 1.5.3

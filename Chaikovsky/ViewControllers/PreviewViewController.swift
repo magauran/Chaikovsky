@@ -10,12 +10,26 @@ import UIKit
 
 class PreviewViewController: UIViewController {
 
+    // MARK: - Properties
+
+    @IBOutlet weak var nameLabel: UILabel!
+
+    @IBOutlet weak var dateLabel: UILabel!
+
+    @IBOutlet weak var descriptionLabel: UILabel!
+
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.view.layer.cornerRadius = 15.0
     }
-    
+
+    // MARK: - IBActions
+
+    @IBAction private func showMore(_ sender: Any) {
+        print("more")
+    }
 
     /*
     // MARK: - Navigation

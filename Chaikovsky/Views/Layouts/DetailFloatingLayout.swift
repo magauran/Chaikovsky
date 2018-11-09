@@ -11,7 +11,7 @@ import FloatingPanel
 class DetailFloatingPanelLayout: FloatingPanelLayout {
 
     var initialPosition: FloatingPanelPosition {
-        return .tip
+        return .half
     }
 
     var supportedPositions: Set<FloatingPanelPosition> {
@@ -20,9 +20,9 @@ class DetailFloatingPanelLayout: FloatingPanelLayout {
 
     func insetFor(position: FloatingPanelPosition) -> CGFloat? {
         switch position {
-        case .full: return 40.0
-        case .half: return 270.0
-        case .tip: return 70.0
+        case .full: return nil
+        case .half: return 140.0
+        case .tip: return 0.0
         }
     }
 
