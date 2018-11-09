@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RecognizerViewController
 //  Chaikovsky
 //
 //  Created by Алексей on 09/11/2018.
@@ -10,7 +10,7 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class RecognizerViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     

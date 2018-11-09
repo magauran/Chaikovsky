@@ -17,6 +17,10 @@ class HomeTableViewController: UITableViewController {
         title = "Chaikovsky"
     }
 
+    // MARK: - IBActions
+
+    @IBAction func unwindToHomeViewController(segue: UIStoryboardSegue) { }
+
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,6 +40,17 @@ class HomeTableViewController: UITableViewController {
             cell.configure(title: "Tickets", color: .blue)
         }
         return cell
+    }
+
+    // MARK: - Table view delegate
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            performSegue(withIdentifier: RecognizerViewController.className, sender: nil)
+        default:
+            print(":)")
+        }
     }
 
 }
