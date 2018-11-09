@@ -9,6 +9,7 @@
 import UIKit
 import SceneKit
 import ARKit
+import FloatingPanel
 
 class RecognizerViewController: UIViewController {
 
@@ -18,6 +19,15 @@ class RecognizerViewController: UIViewController {
 
     private var imageConfiguration: ARImageTrackingConfiguration?
     private var hasSetWorldOrigin = false
+
+    private lazy var fpc: FloatingPanelController = {
+        let fpc = FloatingPanelController()
+        fpc.delegate = self
+        fpc.surfaceView.cornerRadius = 12.0
+        return fpc
+    }()
+
+    private var floatingPanelIsShown = false
 
     // MARK: - Lifecycle
 
@@ -57,6 +67,22 @@ class RecognizerViewController: UIViewController {
                 fatalError("Missing expected asset catalog resources.")
         }
         imageConfiguration?.trackingImages = referenceImages
+    }
+
+    private func showFloatingPanel() {
+        guard self.floatingPanelIsShown == false else { return }
+        guard let contentVC = self.storyboard?.instantiateViewController(withIdentifier: DetailViewController.className) as? DetailViewController else { return }
+        
+        self.fpc.show(contentVC, sender: nil)
+        self.fpc.track(scrollView: contentVC.tableView)
+        self.fpc.addPanel(toParent: self, belowView: nil, animated: true)
+        self.floatingPanelIsShown = true
+    }
+
+    @objc
+    private func dismissFloatingPanel() {
+        fpc.removePanelFromParent(animated: true)
+        floatingPanelIsShown = false
     }
 
 }
@@ -140,7 +166,19 @@ extension RecognizerViewController: ARSCNViewDelegate {
 //                annotationNode.simdPosition += delta
 //                node.addChildNode(annotationNode)
             }
+
+            self.showFloatingPanel()
         }
+    }
+
+}
+
+extension RecognizerViewController: FloatingPanelControllerDelegate {
+
+    // MARK: - Floating panel controller delegate
+
+    func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
+        return DetailFloatingPanelLayout()
     }
 
 }

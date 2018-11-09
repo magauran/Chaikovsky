@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38829824B2927504A4255F59 /* Pods_Chaikovsky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDD825BCAE61E041CE4C7D59 /* Pods_Chaikovsky.framework */; };
 		8A4017CB2195CA4F000C7627 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017CA2195CA4F000C7627 /* AppDelegate.swift */; };
 		8A4017CF2195CA4F000C7627 /* RecognizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017CE2195CA4F000C7627 /* RecognizerViewController.swift */; };
 		8A4017D22195CA4F000C7627 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4017D02195CA4F000C7627 /* Main.storyboard */; };
@@ -18,9 +19,12 @@
 		8A4017E82195D0C1000C7627 /* FeatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017E72195D0C0000C7627 /* FeatureTableViewCell.swift */; };
 		8A4017EA2195D17C000C7627 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017E92195D17C000C7627 /* DesignableView.swift */; };
 		8A4017EE2195E954000C7627 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017ED2195E954000C7627 /* PopUpView.swift */; };
+		8A4017F22195F1E3000C7627 /* DetailFloatingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017F12195F1E3000C7627 /* DetailFloatingLayout.swift */; };
+		8A4017F62195F274000C7627 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017F52195F274000C7627 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		85476BCF404968193A73C4E6 /* Pods-Chaikovsky.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaikovsky.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chaikovsky/Pods-Chaikovsky.debug.xcconfig"; sourceTree = "<group>"; };
 		8A4017C72195CA4F000C7627 /* Chaikovsky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chaikovsky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4017CA2195CA4F000C7627 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A4017CE2195CA4F000C7627 /* RecognizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizerViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +38,10 @@
 		8A4017E72195D0C0000C7627 /* FeatureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTableViewCell.swift; sourceTree = "<group>"; };
 		8A4017E92195D17C000C7627 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		8A4017ED2195E954000C7627 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		8A4017F12195F1E3000C7627 /* DetailFloatingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFloatingLayout.swift; sourceTree = "<group>"; };
+		8A4017F52195F274000C7627 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B6B595FF4C2B678656D748EA /* Pods-Chaikovsky.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaikovsky.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chaikovsky/Pods-Chaikovsky.release.xcconfig"; sourceTree = "<group>"; };
+		EDD825BCAE61E041CE4C7D59 /* Pods_Chaikovsky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chaikovsky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +49,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38829824B2927504A4255F59 /* Pods_Chaikovsky.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44DCE05CD2E29B1BE60D01F9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85476BCF404968193A73C4E6 /* Pods-Chaikovsky.debug.xcconfig */,
+				B6B595FF4C2B678656D748EA /* Pods-Chaikovsky.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8A4017BE2195CA4F000C7627 = {
 			isa = PBXGroup;
 			children = (
 				8A4017C92195CA4F000C7627 /* Chaikovsky */,
 				8A4017C82195CA4F000C7627 /* Products */,
+				44DCE05CD2E29B1BE60D01F9 /* Pods */,
+				8DD2490C2882EAF9CB8E646D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,8 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				8A4017CA2195CA4F000C7627 /* AppDelegate.swift */,
-				8A4017CE2195CA4F000C7627 /* RecognizerViewController.swift */,
-				8A4017DE2195CCDA000C7627 /* HomeTableViewController.swift */,
+				8A4017F32195F216000C7627 /* ViewControllers */,
 				8A4017EC2195E920000C7627 /* Views */,
 				8A4017E22195D011000C7627 /* Extensions */,
 				8A4017D02195CA4F000C7627 /* Main.storyboard */,
@@ -107,11 +126,38 @@
 		8A4017EC2195E920000C7627 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8A4017F42195F23F000C7627 /* Layouts */,
 				8A4017E72195D0C0000C7627 /* FeatureTableViewCell.swift */,
 				8A4017E92195D17C000C7627 /* DesignableView.swift */,
 				8A4017ED2195E954000C7627 /* PopUpView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8A4017F32195F216000C7627 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8A4017DE2195CCDA000C7627 /* HomeTableViewController.swift */,
+				8A4017CE2195CA4F000C7627 /* RecognizerViewController.swift */,
+				8A4017F52195F274000C7627 /* DetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8A4017F42195F23F000C7627 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				8A4017F12195F1E3000C7627 /* DetailFloatingLayout.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		8DD2490C2882EAF9CB8E646D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDD825BCAE61E041CE4C7D59 /* Pods_Chaikovsky.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A4017DB2195CA55000C7627 /* Build configuration list for PBXNativeTarget "Chaikovsky" */;
 			buildPhases = (
+				532DBBDDF73F6F5BF35BECA5 /* [CP] Check Pods Manifest.lock */,
 				8A4017C32195CA4F000C7627 /* Sources */,
 				8A4017C42195CA4F000C7627 /* Frameworks */,
 				8A4017C52195CA4F000C7627 /* Resources */,
+				EA0A0814E0E6BF7F5D346B56 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,6 +228,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		532DBBDDF73F6F5BF35BECA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Chaikovsky-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA0A0814E0E6BF7F5D346B56 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Chaikovsky/Pods-Chaikovsky-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FloatingPanel/FloatingPanel.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FloatingPanel.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chaikovsky/Pods-Chaikovsky-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8A4017C32195CA4F000C7627 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -189,8 +276,10 @@
 				8A4017EE2195E954000C7627 /* PopUpView.swift in Sources */,
 				8A4017DF2195CCDA000C7627 /* HomeTableViewController.swift in Sources */,
 				8A4017CF2195CA4F000C7627 /* RecognizerViewController.swift in Sources */,
+				8A4017F22195F1E3000C7627 /* DetailFloatingLayout.swift in Sources */,
 				8A4017E42195D02D000C7627 /* NSObject+ClassName.swift in Sources */,
 				8A4017EA2195D17C000C7627 /* DesignableView.swift in Sources */,
+				8A4017F62195F274000C7627 /* DetailViewController.swift in Sources */,
 				8A4017E12195CFFD000C7627 /* UITableViewCell+Reuse.swift in Sources */,
 				8A4017CB2195CA4F000C7627 /* AppDelegate.swift in Sources */,
 			);
@@ -336,6 +425,7 @@
 		};
 		8A4017DC2195CA55000C7627 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85476BCF404968193A73C4E6 /* Pods-Chaikovsky.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -354,6 +444,7 @@
 		};
 		8A4017DD2195CA55000C7627 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6B595FF4C2B678656D748EA /* Pods-Chaikovsky.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
