@@ -12,6 +12,7 @@
 		8A4017D22195CA4F000C7627 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4017D02195CA4F000C7627 /* Main.storyboard */; };
 		8A4017D42195CA55000C7627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4017D32195CA55000C7627 /* Assets.xcassets */; };
 		8A4017D72195CA55000C7627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4017D52195CA55000C7627 /* LaunchScreen.storyboard */; };
+		8A4017DF2195CCDA000C7627 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017DE2195CCDA000C7627 /* HomeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		8A4017D32195CA55000C7627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A4017D62195CA55000C7627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A4017D82195CA55000C7627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A4017DE2195CCDA000C7627 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				8A4017CA2195CA4F000C7627 /* AppDelegate.swift */,
 				8A4017CE2195CA4F000C7627 /* ViewController.swift */,
+				8A4017DE2195CCDA000C7627 /* HomeTableViewController.swift */,
 				8A4017D02195CA4F000C7627 /* Main.storyboard */,
 				8A4017D32195CA55000C7627 /* Assets.xcassets */,
 				8A4017D52195CA55000C7627 /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A4017DF2195CCDA000C7627 /* HomeTableViewController.swift in Sources */,
 				8A4017CF2195CA4F000C7627 /* ViewController.swift in Sources */,
 				8A4017CB2195CA4F000C7627 /* AppDelegate.swift in Sources */,
 			);
