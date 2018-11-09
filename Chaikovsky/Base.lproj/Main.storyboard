@@ -45,7 +45,7 @@
                     </view>
                     <connections>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
-                        <segue destination="TgQ-8u-t3Q" kind="show" identifier="DetailViewController" id="NQJ-cq-xYY"/>
+                        <segue destination="TgQ-8u-t3Q" kind="show" identifier="DetailViewController" id="7YB-lr-Ifp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -237,13 +237,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jqM-h3-r1W"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5qx-OV-SV2"/>
                     <connections>
                         <outlet property="tableView" destination="bJo-fv-aPe" id="jPw-nU-lUn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJO-07-ga3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2249.5" y="131.5"/>
+            <point key="canvasLocation" x="2262" y="132"/>
         </scene>
         <!--Home Table View Controller-->
         <scene sceneID="icz-uG-55C">

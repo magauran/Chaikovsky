@@ -7,15 +7,24 @@
 //
 
 import UIKit
+import GSKStretchyHeaderView
 
 class DetailViewController: UIViewController {
 
-    var artist: Artist!
+    var artist = Artist()
+    var stretchyHeader: ArtistHeaderView!
+
     @IBOutlet weak var tableView: UITableView!
 
-    func configure(with name: String) {
-        self.name = artist.name
-        //tableView.reloadData()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let nibViews = Bundle.main.loadNibNamed(ArtistHeaderView.className, owner: self, options: nil)
+        guard let header = nibViews?.first as? ArtistHeaderView else { return }
+        self.stretchyHeader = header
+        self.tableView.addSubview(self.stretchyHeader)
+            if #available(iOS 11.0, *) {
+                self.tableView.contentInsetAdjustmentBehavior = .never
+            }
     }
 
 }
@@ -42,7 +51,7 @@ extension DetailViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let cell: NameTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.configure(name: name)
+            cell.configure(name: artist.name)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PortraitTableViewCell", for: indexPath)

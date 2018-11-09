@@ -1,8 +1,14 @@
 PODS:
   - FloatingPanel (1.1.0)
+  - GSKStretchyHeaderView (1.0.4)
 
 DEPENDENCIES:
   - FloatingPanel (from `https://github.com/SCENEE/FloatingPanel.git`, commit `630580beb62475c43f7c0efffa1ee9e0cba99643`)
+  - GSKStretchyHeaderView
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - GSKStretchyHeaderView
 
 EXTERNAL SOURCES:
   FloatingPanel:
@@ -16,7 +22,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   FloatingPanel: 585c9ef2011bc31cbcd14756f2a09fb29ade6b45
+  GSKStretchyHeaderView: 9743704c12bdc9cf7c7947bad3af8bf24f7061e3
 
-PODFILE CHECKSUM: ea0af379bfc7dd118f742fa78480f55b494cae90
+PODFILE CHECKSUM: 958b8914f08fdb8fbdfb0489f7387bf50be9b160
 
 COCOAPODS: 1.5.3
