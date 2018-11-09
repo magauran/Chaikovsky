@@ -75,6 +75,7 @@ class RecognizerViewController: UIViewController {
     private func showFloatingPanel() {
         guard let contentVC = self.storyboard?.instantiateViewController(withIdentifier: PreviewViewController.className) as? PreviewViewController else { return }
         contentVC.artist = currentArtist
+        contentVC.delegate = self
         self.fpc.set(contentViewController: contentVC)
         self.fpc.addPanel(toParent: self, belowView: nil, animated: true)
         self.floatingPanelIsShown = true
@@ -84,6 +85,15 @@ class RecognizerViewController: UIViewController {
     private func dismissFloatingPanel() {
         fpc.removePanelFromParent(animated: true)
         floatingPanelIsShown = false
+    }
+
+    // Mark: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == DetailViewController.className {
+            guard let destinationVC = segue.destination as? DetailViewController else { return }
+            destinationVC.artist = currentArtist
+        }
     }
 
 }
@@ -201,6 +211,14 @@ extension RecognizerViewController: FloatingPanelControllerDelegate {
             dismissFloatingPanel()
             floatingPanelIsShown = false
         }
+    }
+
+}
+
+extension RecognizerViewController: PreviewViewControllerDelegate {
+
+    func didTapMoreButton() {
+        performSegue(withIdentifier: DetailViewController.className, sender: nil)
     }
 
 }

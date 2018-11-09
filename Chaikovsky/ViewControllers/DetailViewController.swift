@@ -10,12 +10,11 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var artist: Artist!
     @IBOutlet weak var tableView: UITableView!
 
-    private var name = ""
-
     func configure(with name: String) {
-        self.name = name
+        self.name = artist.name
         //tableView.reloadData()
     }
 

@@ -8,10 +8,17 @@
 
 import UIKit
 
+protocol PreviewViewControllerDelegate: class {
+
+    func didTapMoreButton()
+
+}
+
 class PreviewViewController: UIViewController {
 
     // MARK: - Properties
 
+    weak var delegate: PreviewViewControllerDelegate?
     var artist: Artist?
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
@@ -29,7 +36,7 @@ class PreviewViewController: UIViewController {
     // MARK: - IBActions
 
     @IBAction private func showMore(_ sender: Any) {
-        print("more")
+        delegate?.didTapMoreButton()
     }
 
     // MARK: - Configuration
@@ -38,15 +45,5 @@ class PreviewViewController: UIViewController {
         nameLabel.text = artist.name
         descriptionLabel.text = artist.description
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

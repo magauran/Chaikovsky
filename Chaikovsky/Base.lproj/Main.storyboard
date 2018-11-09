@@ -45,6 +45,7 @@
                     </view>
                     <connections>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                        <segue destination="TgQ-8u-t3Q" kind="show" identifier="DetailViewController" id="NQJ-cq-xYY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -57,11 +58,11 @@
             <objects>
                 <viewController storyboardIdentifier="PreviewViewController" id="krV-d9-hhv" customClass="PreviewViewController" customModule="Chaikovsky" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xWf-EK-Xcv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рахманинов С. В." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKw-3a-0CG">
-                                <rect key="frame" x="10" y="30" width="355" height="50"/>
+                                <rect key="frame" x="10" y="10" width="355" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="OVG-bJ-gIk"/>
                                 </constraints>
@@ -70,13 +71,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="великий русский композитор" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKS-fR-bro">
-                                <rect key="frame" x="10" y="90" width="212" height="34"/>
+                                <rect key="frame" x="10" y="70" width="212" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ye-Ao-stK" customClass="MoreButton" customModule="Chaikovsky" customModuleProvider="target">
-                                <rect key="frame" x="239" y="90" width="120" height="34"/>
+                                <rect key="frame" x="239" y="70" width="120" height="34"/>
                                 <color key="backgroundColor" red="0.8907836294" green="0.8907836294" blue="0.8907836294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="9g8-P4-8WY"/>
@@ -90,7 +91,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="showMore:" destination="krV-d9-hhv" eventType="touchUpInside" id="nqn-0D-Tak"/>
+                                    <action selector="showMore:" destination="krV-d9-hhv" eventType="touchUpInside" id="xbc-us-rDx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -108,6 +109,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wWQ-2b-RJ4"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="140"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="KKS-fR-bro" id="Lqn-ei-PTE"/>
                         <outlet property="nameLabel" destination="aKw-3a-0CG" id="1nH-Hw-FbX"/>
@@ -115,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PdO-oW-cYf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2248.8000000000002" y="-690.40479760119945"/>
+            <point key="canvasLocation" x="1454" y="-372"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="jyT-vF-0r5">
