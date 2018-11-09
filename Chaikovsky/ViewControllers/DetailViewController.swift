@@ -12,6 +12,13 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
+    private var name = ""
+
+    func configure(with name: String) {
+        self.name = name
+        //tableView.reloadData()
+    }
+
 }
 
 extension DetailViewController: UITableViewDelegate {
@@ -35,7 +42,8 @@ extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "NameTableViewCell", for: indexPath)
+            let cell: NameTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.configure(name: name)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PortraitTableViewCell", for: indexPath)

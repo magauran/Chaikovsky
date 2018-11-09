@@ -28,6 +28,8 @@ class RecognizerViewController: UIViewController {
     }()
 
     private var floatingPanelIsShown = false
+    private var foundedPortraits: [String] = []
+    private var currentPortrait = ""
 
     // MARK: - Lifecycle
 
@@ -70,9 +72,9 @@ class RecognizerViewController: UIViewController {
     }
 
     private func showFloatingPanel() {
-        guard self.floatingPanelIsShown == false else { return }
+       if self.floatingPanelIsShown != false && [FloatingPanelPosition.half, FloatingPanelPosition.full].contains(self.fpc.position) { return }
         guard let contentVC = self.storyboard?.instantiateViewController(withIdentifier: DetailViewController.className) as? DetailViewController else { return }
-        
+        contentVC.configure(with: currentPortrait)
         self.fpc.show(contentVC, sender: nil)
         self.fpc.track(scrollView: contentVC.tableView)
         self.fpc.addPanel(toParent: self, belowView: nil, animated: true)
@@ -129,7 +131,13 @@ extension RecognizerViewController: ARSCNViewDelegate {
 
     // MARK: - ARSCNViewDelegate
 
-    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+//    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+//        if let imageAnchor = anchor as? ARImageAnchor {
+//            handleFoundImage(imageAnchor, node)
+//        }
+//    }
+
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         if let imageAnchor = anchor as? ARImageAnchor {
             handleFoundImage(imageAnchor, node)
         }
@@ -140,7 +148,7 @@ extension RecognizerViewController: ARSCNViewDelegate {
             guard let name = imageAnchor.referenceImage.name else { return }
             print("You found a \(name) image")
 
-            if !self.hasSetWorldOrigin {
+            if !self.foundedPortraits.contains(name) {
                 self.sceneView.session.setWorldOrigin(relativeTransform: imageAnchor.transform)
                 self.hasSetWorldOrigin = true
 
@@ -151,9 +159,11 @@ extension RecognizerViewController: ARSCNViewDelegate {
                 let imageNode = SCNNode(geometry: plane)
                 imageNode.geometry?.firstMaterial?.diffuse.contents = image
                 imageNode.name = name
-                imageNode.opacity = 0.3
+                imageNode.opacity = 1.0
                 imageNode.eulerAngles.x = -.pi / 2
                 node.addChildNode(imageNode)
+
+                self.foundedPortraits.append(name)
 
 //                let annotationPlane = SCNPlane(width: plane.width * 1.5, height: plane.width * 0.5)
 //                let annotationNode = SCNNode(geometry: annotationPlane)
@@ -167,7 +177,14 @@ extension RecognizerViewController: ARSCNViewDelegate {
 //                node.addChildNode(annotationNode)
             }
 
-            self.showFloatingPanel()
+
+            if self.currentPortrait != name {
+                self.currentPortrait = name
+                self.showFloatingPanel()
+
+            }
+
+
         }
     }
 

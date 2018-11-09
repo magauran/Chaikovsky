@@ -64,7 +64,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NameTableViewCell" rowHeight="54" id="d5H-1b-ef6">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NameTableViewCell" rowHeight="54" id="d5H-1b-ef6" customClass="NameTableViewCell" customModule="Chaikovsky" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d5H-1b-ef6" id="Pac-zC-X5S">
@@ -87,6 +87,9 @@
                                                 <constraint firstItem="pLh-w6-6PL" firstAttribute="top" secondItem="Pac-zC-X5S" secondAttribute="top" constant="10" id="CiE-FP-cLH"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="pLh-w6-6PL" id="QKq-up-Gp4"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PortraitTableViewCell" rowHeight="298" id="zXb-MO-0VR">
                                         <rect key="frame" x="0.0" y="82" width="375" height="298"/>

@@ -21,6 +21,7 @@
 		8A4017EE2195E954000C7627 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017ED2195E954000C7627 /* PopUpView.swift */; };
 		8A4017F22195F1E3000C7627 /* DetailFloatingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017F12195F1E3000C7627 /* DetailFloatingLayout.swift */; };
 		8A4017F62195F274000C7627 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017F52195F274000C7627 /* DetailViewController.swift */; };
+		8A4017F8219610E9000C7627 /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017F7219610E9000C7627 /* NameTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		8A4017ED2195E954000C7627 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		8A4017F12195F1E3000C7627 /* DetailFloatingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFloatingLayout.swift; sourceTree = "<group>"; };
 		8A4017F52195F274000C7627 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8A4017F7219610E9000C7627 /* NameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
 		B6B595FF4C2B678656D748EA /* Pods-Chaikovsky.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaikovsky.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chaikovsky/Pods-Chaikovsky.release.xcconfig"; sourceTree = "<group>"; };
 		EDD825BCAE61E041CE4C7D59 /* Pods_Chaikovsky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chaikovsky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -130,6 +132,7 @@
 				8A4017E72195D0C0000C7627 /* FeatureTableViewCell.swift */,
 				8A4017E92195D17C000C7627 /* DesignableView.swift */,
 				8A4017ED2195E954000C7627 /* PopUpView.swift */,
+				8A4017F7219610E9000C7627 /* NameTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				8A4017DF2195CCDA000C7627 /* HomeTableViewController.swift in Sources */,
 				8A4017CF2195CA4F000C7627 /* RecognizerViewController.swift in Sources */,
 				8A4017F22195F1E3000C7627 /* DetailFloatingLayout.swift in Sources */,
+				8A4017F8219610E9000C7627 /* NameTableViewCell.swift in Sources */,
 				8A4017E42195D02D000C7627 /* NSObject+ClassName.swift in Sources */,
 				8A4017EA2195D17C000C7627 /* DesignableView.swift in Sources */,
 				8A4017F62195F274000C7627 /* DetailViewController.swift in Sources */,
