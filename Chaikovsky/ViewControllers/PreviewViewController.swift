@@ -12,23 +12,31 @@ class PreviewViewController: UIViewController {
 
     // MARK: - Properties
 
-    @IBOutlet weak var nameLabel: UILabel!
-
-    @IBOutlet weak var dateLabel: UILabel!
-
-    @IBOutlet weak var descriptionLabel: UILabel!
+    var artist: Artist?
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
 
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.layer.cornerRadius = 15.0
+        if let unwrappedArtist = artist {
+            configure(with: unwrappedArtist)
+        }
     }
 
     // MARK: - IBActions
 
     @IBAction private func showMore(_ sender: Any) {
         print("more")
+    }
+
+    // MARK: - Configuration
+
+    private func configure(with artist: Artist) {
+        nameLabel.text = artist.name
+        descriptionLabel.text = artist.description
     }
 
     /*

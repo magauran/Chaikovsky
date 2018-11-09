@@ -24,6 +24,7 @@
 		8A4017F8219610E9000C7627 /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017F7219610E9000C7627 /* NameTableViewCell.swift */; };
 		8A4017FA21961DF0000C7627 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017F921961DF0000C7627 /* PreviewViewController.swift */; };
 		8A4017FC21961F30000C7627 /* MoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017FB21961F30000C7627 /* MoreButton.swift */; };
+		8AB94C232196368700BA8D4E /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB94C222196368700BA8D4E /* Artist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		8A4017F7219610E9000C7627 /* NameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
 		8A4017F921961DF0000C7627 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		8A4017FB21961F30000C7627 /* MoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreButton.swift; sourceTree = "<group>"; };
+		8AB94C222196368700BA8D4E /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		B6B595FF4C2B678656D748EA /* Pods-Chaikovsky.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaikovsky.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chaikovsky/Pods-Chaikovsky.release.xcconfig"; sourceTree = "<group>"; };
 		EDD825BCAE61E041CE4C7D59 /* Pods_Chaikovsky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chaikovsky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				8A4017CA2195CA4F000C7627 /* AppDelegate.swift */,
+				8AB94C222196368700BA8D4E /* Artist.swift */,
 				8A4017F32195F216000C7627 /* ViewControllers */,
 				8A4017EC2195E920000C7627 /* Views */,
 				8A4017E22195D011000C7627 /* Extensions */,
@@ -287,6 +290,7 @@
 				8A4017CF2195CA4F000C7627 /* RecognizerViewController.swift in Sources */,
 				8A4017F22195F1E3000C7627 /* DetailFloatingLayout.swift in Sources */,
 				8A4017F8219610E9000C7627 /* NameTableViewCell.swift in Sources */,
+				8AB94C232196368700BA8D4E /* Artist.swift in Sources */,
 				8A4017E42195D02D000C7627 /* NSObject+ClassName.swift in Sources */,
 				8A4017EA2195D17C000C7627 /* DesignableView.swift in Sources */,
 				8A4017F62195F274000C7627 /* DetailViewController.swift in Sources */,

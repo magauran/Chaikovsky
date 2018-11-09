@@ -30,7 +30,7 @@ class RecognizerViewController: UIViewController {
 
     private var floatingPanelIsShown = false
     private var foundedPortraits: [String] = []
-    private var currentPortrait = ""
+    private var currentArtist = Artist()
 
     // MARK: - Lifecycle
 
@@ -73,9 +73,8 @@ class RecognizerViewController: UIViewController {
     }
 
     private func showFloatingPanel() {
-       if self.floatingPanelIsShown != false && self.fpc.position != .tip { return }
         guard let contentVC = self.storyboard?.instantiateViewController(withIdentifier: PreviewViewController.className) as? PreviewViewController else { return }
-        //contentVC.configure(with: currentPortrait)
+        contentVC.artist = currentArtist
         self.fpc.set(contentViewController: contentVC)
         self.fpc.addPanel(toParent: self, belowView: nil, animated: true)
         self.floatingPanelIsShown = true
@@ -178,8 +177,8 @@ extension RecognizerViewController: ARSCNViewDelegate {
             }
 
 
-            if self.currentPortrait != name || !self.floatingPanelIsShown || self.fpc.position == .tip {
-                self.currentPortrait = name
+            if self.currentArtist.imageName != name || !self.floatingPanelIsShown || self.fpc.position == .tip {
+                self.currentArtist = Artist(name: name, description: "Великий русский композитор")
                 self.showFloatingPanel()
 
             }
