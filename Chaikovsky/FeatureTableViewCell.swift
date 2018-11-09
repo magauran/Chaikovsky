@@ -10,6 +10,13 @@ import UIKit
 
 class FeatureTableViewCell: UITableViewCell {
 
+    // MARK: - Properties
+
+    @IBOutlet private weak var designableView: DesignableView!
+    @IBOutlet private weak var titleLabel: UILabel!
+
+    // MARK: - Lifecycle
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +26,13 @@ class FeatureTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+    // MARK: - Cell configuration
+
+    func configure(title: String, color: UIColor) {
+        titleLabel.text = title
+        designableView.backgroundColor = color
     }
 
 }

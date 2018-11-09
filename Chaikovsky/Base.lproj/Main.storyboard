@@ -41,7 +41,7 @@
         <!--Home Table View Controller-->
         <scene sceneID="icz-uG-55C">
             <objects>
-                <tableViewController id="gxf-8t-PQ5" customClass="HomeTableViewController" customModule="Chaikovsky" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="gxf-8t-PQ5" customClass="HomeTableViewController" customModule="Chaikovsky" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="18" id="0Wh-ro-zql">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,9 +56,20 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INb-jU-bDT" customClass="DesignableView" customModule="Chaikovsky" customModuleProvider="target">
                                             <rect key="frame" x="20" y="10" width="335" height="180"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZ4-1e-MaX">
+                                                    <rect key="frame" x="10" y="122" width="106" height="48"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                                             <constraints>
+                                                <constraint firstItem="bZ4-1e-MaX" firstAttribute="leading" secondItem="INb-jU-bDT" secondAttribute="leading" constant="10" id="Atw-rg-VBu"/>
                                                 <constraint firstAttribute="height" constant="180" id="JP6-rX-Zcc"/>
+                                                <constraint firstAttribute="bottom" secondItem="bZ4-1e-MaX" secondAttribute="bottom" constant="10" id="KIH-pR-EtX"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bZ4-1e-MaX" secondAttribute="trailing" constant="10" id="buy-ed-U5h"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -74,6 +85,10 @@
                                         <constraint firstItem="INb-jU-bDT" firstAttribute="leading" secondItem="hFi-RB-X1q" secondAttribute="leading" constant="20" id="y4i-yD-TO4"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="designableView" destination="INb-jU-bDT" id="aEP-2K-kh7"/>
+                                    <outlet property="titleLabel" destination="bZ4-1e-MaX" id="6g1-DM-Rtk"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
