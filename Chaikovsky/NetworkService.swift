@@ -12,7 +12,7 @@ class NetworkService: NSObject, URLSessionDelegate {
 
     typealias Answer = String
     typealias AnswerHandler = (Answer?) -> Void
-    static let urlString = "https://94.130.19.98:5000/iOS"
+    static let urlString = "https://94.130.19.98:5000/textProcessing"
 
     func ask(question: String, completionHandler: @escaping AnswerHandler) {
         guard let serviceUrl = URL(string: NetworkService.urlString) else {
@@ -33,7 +33,9 @@ class NetworkService: NSObject, URLSessionDelegate {
         let session = URLSession(configuration: sessionConfiguration, delegate: self, delegateQueue: nil)
 
         session.dataTask(with: request) { (data, response, error) in
-            if let data = data {
+            if let data = data,
+                let httpResponse = response as? HTTPURLResponse,
+                httpResponse.statusCode == 200 {
                 let answer = String(data: data, encoding: String.Encoding.utf8)
                 completionHandler(answer)
             }
