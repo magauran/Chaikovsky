@@ -11,6 +11,7 @@ import GSKStretchyHeaderView
 
 class ArtistHeaderView: GSKStretchyHeaderView {
 
+    @IBOutlet weak var nameLabel: UILabel!
     
 
 }

@@ -23,6 +23,7 @@ class DetailViewController: UIViewController {
         stretchyHeader = header
         stretchyHeader.stretchDelegate = self
         stretchyHeader.minimumContentHeight = 0
+        stretchyHeader.nameLabel.text = "Чайковский"
         self.tableView.addSubview(self.stretchyHeader)
         if #available(iOS 11.0, *) {
             self.tableView.contentInsetAdjustmentBehavior = .never
@@ -58,7 +59,7 @@ extension DetailViewController: UITableViewDataSource {
     // MARK: - Table view data source
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 10
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -88,13 +89,20 @@ extension DetailViewController: GSKStretchyHeaderViewStretchDelegate {
             print(stretchFactor)
             self.navigationItem.title = "test"
             let factor = stretchFactor < 0 ? 0.0 : stretchFactor
-            let color = UIColor(white: 1.0, alpha: 1.0 - factor * 2.0)
+            let color = UIColor(white: 1.0, alpha: 1.0 - pow((factor * 2.0), 2))
             navigationController?.navigationBar.setBackgroundImage(UIImage(color: color), for: UIBarMetrics.default)
-            navigationItem.leftBarButtonItem?.tintColor = .blue
+            self.stretchyHeader.nameLabel.alpha = pow((stretchFactor * 2.0), 2)
         } else {
             self.navigationItem.title = nil
             navigationController?.view.backgroundColor = .clear
             navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+
+            self.stretchyHeader.nameLabel.alpha = 1.0
+        }
+
+        if stretchFactor < 0.3 {
+            navigationItem.leftBarButtonItem?.tintColor = .blue
+        } else {
             navigationItem.leftBarButtonItem?.tintColor = .white
         }
     }
