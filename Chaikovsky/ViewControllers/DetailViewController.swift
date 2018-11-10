@@ -20,11 +20,25 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         let nibViews = Bundle.main.loadNibNamed(ArtistHeaderView.className, owner: self, options: nil)
         guard let header = nibViews?.first as? ArtistHeaderView else { return }
-        self.stretchyHeader = header
+        stretchyHeader = header
+        stretchyHeader.stretchDelegate = self
+        stretchyHeader.minimumContentHeight = 0
         self.tableView.addSubview(self.stretchyHeader)
-            if #available(iOS 11.0, *) {
-                self.tableView.contentInsetAdjustmentBehavior = .never
-            }
+        if #available(iOS 11.0, *) {
+            self.tableView.contentInsetAdjustmentBehavior = .never
+        }
+        setupNavigationBar()
+
+    }
+
+    // MARK: - Private methods
+
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.view.backgroundColor = .clear
+        navigationItem.leftBarButtonItem?.tintColor = .white
     }
 
 }
@@ -61,6 +75,27 @@ extension DetailViewController: UITableViewDataSource {
             return cell
         default:
             return UITableViewCell()
+        }
+    }
+
+}
+
+extension DetailViewController: GSKStretchyHeaderViewStretchDelegate {
+
+    func stretchyHeaderView(_ headerView: GSKStretchyHeaderView, didChangeStretchFactor stretchFactor: CGFloat) {
+        headerView.isHidden = stretchFactor == 0.0
+        if stretchFactor < 0.5 {
+            print(stretchFactor)
+            self.navigationItem.title = "test"
+            let factor = stretchFactor < 0 ? 0.0 : stretchFactor
+            let color = UIColor(white: 1.0, alpha: 1.0 - factor * 2.0)
+            navigationController?.navigationBar.setBackgroundImage(UIImage(color: color), for: UIBarMetrics.default)
+            navigationItem.leftBarButtonItem?.tintColor = .blue
+        } else {
+            self.navigationItem.title = nil
+            navigationController?.view.backgroundColor = .clear
+            navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+            navigationItem.leftBarButtonItem?.tintColor = .white
         }
     }
 

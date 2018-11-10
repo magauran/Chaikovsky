@@ -54,6 +54,10 @@ class RecognizerViewController: UIViewController {
         sceneView.session.pause()
     }
 
+    // MARK: - IBActions
+
+    @IBAction func unwindToRecognizerViewController(segue: UIStoryboardSegue) { }
+
     // MARK: - Private methods
 
     private func setupSceneView() {
