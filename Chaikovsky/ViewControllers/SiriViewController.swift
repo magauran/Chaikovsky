@@ -161,27 +161,27 @@ class SiriViewController: UIViewController {
     }
 
     @IBAction func stop(_ sender: Any) {
-        if (isRecording) {
-            audioEngine.stop()
-            audioEngine.inputNode.removeTap(onBus: 0)
-            recognitionTask?.cancel()
-            let finalText = recordedString
-            print(finalText)
-            setSessionPlayerOn()
-            service.ask(question: finalText) { [weak self] (answer) in
-                if let ans = answer {
-                    self?.speak(text: ans)
-                }
+        audioEngine.stop()
+        audioEngine.inputNode.removeTap(onBus: 0)
+        recognitionTask?.cancel()
+        let finalText = recordedString
+        print(finalText)
+        setSessionPlayerOn()
+        service.ask(question: finalText) { [weak self] (answer) in
+            if let ans = answer {
+                self?.speak(text: ans)
             }
-
-            recordedString = ""
-            instructionLabel.text = "Нажми, чтобы задать вопрос"
         }
+
+        recordedString = ""
+        instructionLabel.text = "Нажми, чтобы задать вопрос"
         isRecording.toggle()
         waveformView.isHidden.toggle()
         recordButton.isHidden.toggle()
+
+        UIDevice.vibrate()
     }
-    
+
 }
 
 extension SiriViewController: SFSpeechRecognizerDelegate {
