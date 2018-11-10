@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		38829824B2927504A4255F59 /* Pods_Chaikovsky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDD825BCAE61E041CE4C7D59 /* Pods_Chaikovsky.framework */; };
+		8A1EDFCB2197311000288B38 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1EDFCA2197311000288B38 /* NetworkService.swift */; };
 		8A4017CB2195CA4F000C7627 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017CA2195CA4F000C7627 /* AppDelegate.swift */; };
 		8A4017CF2195CA4F000C7627 /* RecognizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017CE2195CA4F000C7627 /* RecognizerViewController.swift */; };
 		8A4017D22195CA4F000C7627 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4017D02195CA4F000C7627 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		85476BCF404968193A73C4E6 /* Pods-Chaikovsky.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaikovsky.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chaikovsky/Pods-Chaikovsky.debug.xcconfig"; sourceTree = "<group>"; };
+		8A1EDFCA2197311000288B38 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		8A4017C72195CA4F000C7627 /* Chaikovsky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chaikovsky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4017CA2195CA4F000C7627 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A4017CE2195CA4F000C7627 /* RecognizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizerViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				8A4017CA2195CA4F000C7627 /* AppDelegate.swift */,
 				8AB94C222196368700BA8D4E /* Artist.swift */,
+				8A1EDFCA2197311000288B38 /* NetworkService.swift */,
 				8A4017F32195F216000C7627 /* ViewControllers */,
 				8A4017EC2195E920000C7627 /* Views */,
 				8A4017E22195D011000C7627 /* Extensions */,
@@ -317,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A1EDFCB2197311000288B38 /* NetworkService.swift in Sources */,
 				8A4017E82195D0C1000C7627 /* FeatureTableViewCell.swift in Sources */,
 				8AB94C2921964C1100BA8D4E /* UIImage+ColorInit.swift in Sources */,
 				8A4017EE2195E954000C7627 /* PopUpView.swift in Sources */,

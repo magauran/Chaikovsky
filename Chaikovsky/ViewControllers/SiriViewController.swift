@@ -19,6 +19,7 @@ class SiriViewController: UIViewController {
     private var hue: CGFloat = 0.0
     private var isRecording = false
     private var recordedString = ""
+    private var service = NetworkService()
 
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet private weak var questionLabel: UILabel!
@@ -60,7 +61,12 @@ class SiriViewController: UIViewController {
             let finalText = recordedString
             print(finalText)
             setSessionPlayerOn()
-            speak(text: finalText)
+            service.ask(question: finalText) { [weak self] (answer) in
+                if let ans = answer {
+                    self?.speak(text: ans)
+                }
+            }
+
             recordedString = ""
             instructionLabel.text = "Нажми, чтобы задать вопрос"
         }
