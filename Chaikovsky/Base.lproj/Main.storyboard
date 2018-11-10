@@ -193,20 +193,37 @@
             </objects>
             <point key="canvasLocation" x="4131" y="-143"/>
         </scene>
-        <!--View Controller-->
+        <!--Siri View Controller-->
         <scene sceneID="yfS-tI-ayD">
             <objects>
-                <viewController id="pLi-Mm-Nbc" sceneMemberID="viewController">
+                <viewController id="pLi-Mm-Nbc" customClass="SiriViewController" customModule="Chaikovsky" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nx4-LE-1n3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKY-2A-Dqp" customClass="SwiftSiriWaveformView" customModule="SwiftSiriWaveformView">
+                                <rect key="frame" x="0.0" y="196" width="320" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="5oh-1i-x5Y"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DKY-2A-Dqp" firstAttribute="leading" secondItem="iPa-RR-XY6" secondAttribute="leading" id="RdI-yv-feT"/>
+                            <constraint firstItem="DKY-2A-Dqp" firstAttribute="trailing" secondItem="iPa-RR-XY6" secondAttribute="trailing" id="XkC-TU-MVS"/>
+                            <constraint firstItem="iPa-RR-XY6" firstAttribute="bottom" secondItem="DKY-2A-Dqp" secondAttribute="bottom" constant="208" id="rdT-el-8T3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iPa-RR-XY6"/>
                     </view>
+                    <connections>
+                        <outlet property="waveformView" destination="DKY-2A-Dqp" id="gXe-EB-TfE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gre-Ux-Mrc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4131" y="308"/>
+            <point key="canvasLocation" x="4130.625" y="307.3943661971831"/>
         </scene>
         <!--Рахманинов-->
         <scene sceneID="jyT-vF-0r5">

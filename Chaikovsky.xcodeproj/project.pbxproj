@@ -33,6 +33,7 @@
 		8AB94C2F219688BA00BA8D4E /* AudioPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB94C2E219688B900BA8D4E /* AudioPlayerViewController.swift */; };
 		8AB94C312196DCF900BA8D4E /* DetailTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB94C302196DCF900BA8D4E /* DetailTableHeaderView.swift */; };
 		8AB94C332196DD3200BA8D4E /* DetailTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB94C322196DD3200BA8D4E /* DetailTableHeaderView.xib */; };
+		8AD69D572196F50400E5BB68 /* SiriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD69D562196F50400E5BB68 /* SiriViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		8AB94C2E219688B900BA8D4E /* AudioPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewController.swift; sourceTree = "<group>"; };
 		8AB94C302196DCF900BA8D4E /* DetailTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableHeaderView.swift; sourceTree = "<group>"; };
 		8AB94C322196DD3200BA8D4E /* DetailTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableHeaderView.xib; sourceTree = "<group>"; };
+		8AD69D562196F50400E5BB68 /* SiriViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriViewController.swift; sourceTree = "<group>"; };
 		B6B595FF4C2B678656D748EA /* Pods-Chaikovsky.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaikovsky.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chaikovsky/Pods-Chaikovsky.release.xcconfig"; sourceTree = "<group>"; };
 		EDD825BCAE61E041CE4C7D59 /* Pods_Chaikovsky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chaikovsky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -174,6 +176,7 @@
 				8A4017DE2195CCDA000C7627 /* HomeTableViewController.swift */,
 				8A4017CE2195CA4F000C7627 /* RecognizerViewController.swift */,
 				8A4017F52195F274000C7627 /* DetailViewController.swift */,
+				8AD69D562196F50400E5BB68 /* SiriViewController.swift */,
 				8A4017F921961DF0000C7627 /* PreviewViewController.swift */,
 				8AB94C2E219688B900BA8D4E /* AudioPlayerViewController.swift */,
 			);
@@ -294,11 +297,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Chaikovsky/Pods-Chaikovsky-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FloatingPanel/FloatingPanel.framework",
 				"${BUILT_PRODUCTS_DIR}/GSKStretchyHeaderView/GSKStretchyHeaderView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSiriWaveformView/SwiftSiriWaveformView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FloatingPanel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GSKStretchyHeaderView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSiriWaveformView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -317,6 +322,7 @@
 				8A4017EE2195E954000C7627 /* PopUpView.swift in Sources */,
 				8A4017DF2195CCDA000C7627 /* HomeTableViewController.swift in Sources */,
 				8A4017CF2195CA4F000C7627 /* RecognizerViewController.swift in Sources */,
+				8AD69D572196F50400E5BB68 /* SiriViewController.swift in Sources */,
 				8A4017F22195F1E3000C7627 /* DetailFloatingLayout.swift in Sources */,
 				8AB94C2F219688BA00BA8D4E /* AudioPlayerViewController.swift in Sources */,
 				8A4017F8219610E9000C7627 /* NameTableViewCell.swift in Sources */,
