@@ -17,7 +17,13 @@ class SiriViewController: UIViewController {
     private var timer: Timer?
     private var change: CGFloat = 0.01
     private var hue: CGFloat = 0.0
+    private var isRecording = false
+    private var recordedString = ""
 
+    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet private weak var questionLabel: UILabel!
+
+    @IBOutlet weak var instructionLabel: UILabel!
     let audioEngine = AVAudioEngine()
     let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer(locale: Locale.init(identifier: "ru-RU"))
     let request = SFSpeechAudioBufferRecognitionRequest()
@@ -27,14 +33,7 @@ class SiriViewController: UIViewController {
         super.viewDidLoad()
         waveformView.amplitude = 1.0
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(refreshAudioView(_:)), userInfo: nil, repeats: true)
-
-        let string = "Смотрите как я могу говорить, ыыыыыыыыы "
-        //speak(text: string)
-
-
         requestSpeechAuthorization()
-        recognizeSpeech()
-        //isRecording = true
     }
 
     @objc
@@ -49,7 +48,33 @@ class SiriViewController: UIViewController {
     }
 
     @IBAction func start(_ sender: Any) {
+        if !isRecording {
+            recognizeSpeech()
+            instructionLabel.text = "Нажми, чтобы завершить вопрос"
+        } else {
+            audioEngine.stop()
+            audioEngine.inputNode.removeTap(onBus: 0)
+            recognitionTask?.cancel()
+            let finalText = recordedString
+            print(finalText)
+            setSessionPlayerOn()
+            speak(text: finalText)
+            recordedString = ""
+            instructionLabel.text = "Нажми, чтобы задать вопрос"
+        }
+        isRecording.toggle()
+    }
 
+    func setSessionPlayerOn() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, options: .mixWithOthers)
+        } catch _ {}
+        do {
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch _ {}
+        do {
+            try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
+        } catch {}
     }
 
     private func speak(text: String) {
@@ -84,7 +109,7 @@ class SiriViewController: UIViewController {
             if let result = result {
 
                 let bestString = result.bestTranscription.formattedString
-                print(bestString)
+                self.recordedString = bestString
 
                 var lastString: String = ""
                 for segment in result.bestTranscription.segments {
@@ -92,9 +117,6 @@ class SiriViewController: UIViewController {
                     lastString = String(bestString[indexTo...])
                 }
                 self.checkForColorsSaid(resultString: lastString)
-            } else if let error = error {
-                print("There has been a speech recognition error.")
-                print(error)
             }
         })
     }
