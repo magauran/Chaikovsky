@@ -56,6 +56,11 @@ class AudioPlayerViewController: UIViewController {
             print(error)
         }
     }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        stop()
+    }
     
     @IBAction func play(_ sender: UIButton) {
         if let unwrappedPlayer = player {

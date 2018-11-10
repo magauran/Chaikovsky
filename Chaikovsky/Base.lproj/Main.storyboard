@@ -20,24 +20,36 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4P-52-8wn">
-                                <rect key="frame" x="10" y="30" width="39" height="30"/>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4P-52-8wn">
+                                <rect key="frame" x="10" y="30" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="f4W-Ro-LrA"/>
-                                    <constraint firstAttribute="width" constant="39" id="h9z-db-wBR"/>
+                                    <constraint firstAttribute="height" constant="40" id="f4W-Ro-LrA"/>
+                                    <constraint firstAttribute="width" constant="40" id="h9z-db-wBR"/>
                                 </constraints>
-                                <state key="normal" title="Close"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="icons8-close-window-filled-50"/>
                                 <connections>
                                     <segue destination="DVh-rk-SUT" kind="unwind" unwindAction="unwindToHomeViewControllerWithSegue:" id="FJ5-vV-TmU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZd-FX-xyc">
+                                <rect key="frame" x="270" y="30" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3Uw-Fl-y7D"/>
+                                    <constraint firstAttribute="width" constant="40" id="j8m-OB-JP6"/>
+                                </constraints>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="icons8-info-filled-100"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="WZd-FX-xyc" secondAttribute="trailing" constant="10" id="ACC-Ua-aaK"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
                             <constraint firstItem="e4P-52-8wn" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" constant="10" id="aSY-ax-4DP"/>
+                            <constraint firstItem="WZd-FX-xyc" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" constant="10" id="egk-rw-yEj"/>
                             <constraint firstItem="e4P-52-8wn" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" constant="10" id="rI1-0u-lk5"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="rJc-2c-zQA"/>
                         </constraints>
@@ -51,7 +63,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
                 <exit id="DVh-rk-SUT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1453.5999999999999" y="131.78410794602701"/>
+            <point key="canvasLocation" x="1453.125" y="130.98591549295776"/>
         </scene>
         <!--Preview View Controller-->
         <scene sceneID="h7L-NQ-csS">
@@ -198,24 +210,24 @@
             <objects>
                 <viewController title="Голосовой помощник" id="pLi-Mm-Nbc" customClass="SiriViewController" customModule="Chaikovsky" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nx4-LE-1n3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKY-2A-Dqp" customClass="SwiftSiriWaveformView" customModule="SwiftSiriWaveformView">
-                                <rect key="frame" x="0.0" y="260" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="196" width="320" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="5oh-1i-x5Y"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кто такой чайковский?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbZ-QN-4Mx">
-                                <rect key="frame" x="10" y="131" width="300" height="24"/>
+                                <rect key="frame" x="10" y="20" width="300" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g73-2I-2F0">
-                                <rect key="frame" x="130" y="473" width="60" height="60"/>
+                                <rect key="frame" x="130" y="409" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="TQo-AY-GNQ"/>
                                     <constraint firstAttribute="width" constant="60" id="ZkN-Ya-HFU"/>
@@ -226,7 +238,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нажми, чтобы задать вопрос" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0VP-zN-uSR">
-                                <rect key="frame" x="42.5" y="424" width="235" height="21"/>
+                                <rect key="frame" x="42.5" y="360" width="235" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -481,10 +493,12 @@
     </scenes>
     <resources>
         <image name="back" width="33" height="33"/>
+        <image name="icons8-close-window-filled-50" width="75" height="75"/>
+        <image name="icons8-info-filled-100" width="75" height="75"/>
         <image name="play" width="39" height="39"/>
         <image name="siri" width="525" height="525"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uOD-NA-eqd"/>
+        <segue reference="eg2-BH-qXy"/>
     </inferredMetricsTieBreakers>
 </document>

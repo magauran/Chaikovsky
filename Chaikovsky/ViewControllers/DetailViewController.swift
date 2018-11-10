@@ -40,10 +40,6 @@ class DetailViewController: UIViewController {
         setupHeaders()
     }
 
-    @IBAction func runSiri(_ sender: Any) {
-        print("Hello Siri!")
-    }
-
     // MARK: - Private methods
 
     private func setupNavigationBar() {
@@ -123,6 +119,12 @@ extension DetailViewController: UITableViewDataSource {
             player.view.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50)
             if let playerView = player.view {
                 cell.contentView.addSubview(playerView)
+                playerView.translatesAutoresizingMaskIntoConstraints = false
+
+                NSLayoutConstraint(item: playerView, attribute: .leading, relatedBy: .equal, toItem: cell.contentView, attribute: .leading, multiplier: 1.0, constant: 0.0).isActive = true
+                NSLayoutConstraint(item: playerView, attribute: .trailing, relatedBy: .equal, toItem: cell.contentView, attribute: .trailing, multiplier: 1.0, constant: 0.0).isActive = true
+                NSLayoutConstraint(item: playerView, attribute: .top, relatedBy: .equal, toItem: cell.contentView, attribute: .top, multiplier: 1.0, constant: 0.0).isActive = true
+                NSLayoutConstraint(item: playerView, attribute: .bottom, relatedBy: .equal, toItem: cell.contentView, attribute: .bottom, multiplier: 1.0, constant: 0.0).isActive = true
             }
             return cell
         default:
