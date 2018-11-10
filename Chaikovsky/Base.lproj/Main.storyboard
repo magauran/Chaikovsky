@@ -214,19 +214,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKY-2A-Dqp" customClass="SwiftSiriWaveformView" customModule="SwiftSiriWaveformView">
-                                <rect key="frame" x="0.0" y="260" width="320" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="5oh-1i-x5Y"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кто такой чайковский?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbZ-QN-4Mx">
-                                <rect key="frame" x="10" y="131" width="300" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g73-2I-2F0">
                                 <rect key="frame" x="130" y="473" width="60" height="60"/>
                                 <constraints>
@@ -238,8 +225,25 @@
                                     <action selector="start:" destination="pLi-Mm-Nbc" eventType="touchUpInside" id="xgT-lj-qO3"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKY-2A-Dqp" customClass="SwiftSiriWaveformView" customModule="SwiftSiriWaveformView">
+                                <rect key="frame" x="0.0" y="453" width="320" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="5oh-1i-x5Y"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Q0M-hV-c7o" appends="YES" id="tOz-86-Q7y"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кто такой чайковский?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbZ-QN-4Mx">
+                                <rect key="frame" x="10" y="131" width="300" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нажми, чтобы задать вопрос" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0VP-zN-uSR">
-                                <rect key="frame" x="42.5" y="424" width="235" height="21"/>
+                                <rect key="frame" x="42.5" y="416" width="235" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -247,15 +251,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="iPa-RR-XY6" firstAttribute="bottom" secondItem="g73-2I-2F0" secondAttribute="bottom" constant="35" id="0sF-uL-Sj1"/>
-                            <constraint firstItem="g73-2I-2F0" firstAttribute="top" secondItem="0VP-zN-uSR" secondAttribute="bottom" constant="28" id="Ef8-RS-d67"/>
+                            <constraint firstItem="g73-2I-2F0" firstAttribute="centerX" secondItem="iPa-RR-XY6" secondAttribute="centerX" id="A24-H9-rNo"/>
+                            <constraint firstItem="iPa-RR-XY6" firstAttribute="bottom" secondItem="g73-2I-2F0" secondAttribute="bottom" constant="35" id="Fgs-rJ-gLP"/>
                             <constraint firstItem="PbZ-QN-4Mx" firstAttribute="leading" secondItem="iPa-RR-XY6" secondAttribute="leading" constant="10" id="M2S-Mm-0Tg"/>
                             <constraint firstItem="DKY-2A-Dqp" firstAttribute="leading" secondItem="iPa-RR-XY6" secondAttribute="leading" id="RdI-yv-feT"/>
-                            <constraint firstItem="g73-2I-2F0" firstAttribute="centerX" secondItem="iPa-RR-XY6" secondAttribute="centerX" id="Rft-oQ-0kr"/>
                             <constraint firstItem="iPa-RR-XY6" firstAttribute="trailing" secondItem="PbZ-QN-4Mx" secondAttribute="trailing" constant="10" id="VTc-k3-8em"/>
                             <constraint firstItem="DKY-2A-Dqp" firstAttribute="trailing" secondItem="iPa-RR-XY6" secondAttribute="trailing" id="XkC-TU-MVS"/>
                             <constraint firstItem="0VP-zN-uSR" firstAttribute="centerX" secondItem="iPa-RR-XY6" secondAttribute="centerX" id="aVz-jq-Btd"/>
-                            <constraint firstItem="iPa-RR-XY6" firstAttribute="bottom" secondItem="DKY-2A-Dqp" secondAttribute="bottom" constant="208" id="rdT-el-8T3"/>
+                            <constraint firstItem="DKY-2A-Dqp" firstAttribute="top" secondItem="0VP-zN-uSR" secondAttribute="bottom" constant="16" id="dTr-fz-uwN"/>
+                            <constraint firstItem="iPa-RR-XY6" firstAttribute="bottom" secondItem="DKY-2A-Dqp" secondAttribute="bottom" constant="15" id="mug-vm-blP"/>
                             <constraint firstItem="PbZ-QN-4Mx" firstAttribute="top" secondItem="iPa-RR-XY6" secondAttribute="top" constant="20" id="u44-dG-pIn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iPa-RR-XY6"/>
@@ -268,6 +272,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gre-Ux-Mrc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Q0M-hV-c7o">
+                    <connections>
+                        <action selector="stop:" destination="pLi-Mm-Nbc" id="1fy-QX-eXq"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2291" y="559"/>
         </scene>

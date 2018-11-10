@@ -33,11 +33,10 @@ class SiriViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        waveformView.amplitude = 1.0
-        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(refreshAudioView(_:)), userInfo: nil, repeats: true)
         requestSpeechAuthorization()
         questionLabel.text = ""
         setupNavigationController()
+        setupWaveformView()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -60,23 +59,10 @@ class SiriViewController: UIViewController {
         if !isRecording {
             recognizeSpeech()
             instructionLabel.text = "Нажми, чтобы завершить вопрос"
-        } else {
-            audioEngine.stop()
-            audioEngine.inputNode.removeTap(onBus: 0)
-            recognitionTask?.cancel()
-            let finalText = recordedString
-            print(finalText)
-            setSessionPlayerOn()
-            service.ask(question: finalText) { [weak self] (answer) in
-                if let ans = answer {
-                    self?.speak(text: ans)
-                }
-            }
-
-            recordedString = ""
-            instructionLabel.text = "Нажми, чтобы задать вопрос"
         }
         isRecording.toggle()
+        waveformView.isHidden.toggle()
+        recordButton.isHidden.toggle()
     }
 
     func setSessionPlayerOn() {
@@ -168,6 +154,34 @@ class SiriViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.shadowImage = UIImage()
     }
+
+    private func setupWaveformView() {
+        waveformView.amplitude = 1.0
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(refreshAudioView(_:)), userInfo: nil, repeats: true)
+    }
+
+    @IBAction func stop(_ sender: Any) {
+        if (isRecording) {
+            audioEngine.stop()
+            audioEngine.inputNode.removeTap(onBus: 0)
+            recognitionTask?.cancel()
+            let finalText = recordedString
+            print(finalText)
+            setSessionPlayerOn()
+            service.ask(question: finalText) { [weak self] (answer) in
+                if let ans = answer {
+                    self?.speak(text: ans)
+                }
+            }
+
+            recordedString = ""
+            instructionLabel.text = "Нажми, чтобы задать вопрос"
+        }
+        isRecording.toggle()
+        waveformView.isHidden.toggle()
+        recordButton.isHidden.toggle()
+    }
+    
 }
 
 extension SiriViewController: SFSpeechRecognizerDelegate {
