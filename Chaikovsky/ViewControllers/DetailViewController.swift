@@ -11,6 +11,13 @@ import GSKStretchyHeaderView
 
 class DetailViewController: UIViewController {
 
+    enum Section: Int, CaseIterable {
+        case bio
+        case music
+        case video
+        case concerts
+    }
+
     var artist = Artist()
     var stretchyHeader: ArtistHeaderView!
 
@@ -58,18 +65,41 @@ extension DetailViewController: UITableViewDataSource {
 
     // MARK: - Table view data source
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return DetailViewController.Section.allCases.count
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
+        guard let enumSection = Section(rawValue: indexPath.section) else { return UITableViewCell() }
+        switch enumSection {
+        case .bio:
             let cell: BioTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             cell.bioLabel.text = artist.shortBio
             return cell
+        case .music:
+            let cell: MusicTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.textLabel?.text = "Музыка"
+            return cell
         default:
             return UITableViewCell()
+        }
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let enumSection = Section(rawValue: section) else { return nil }
+        switch enumSection {
+        case .bio:
+            return "Биография"
+        case .music:
+            return "Композиции"
+        case .video:
+            return "Видео"
+        case .concerts:
+            return "Концерты"
         }
     }
 
