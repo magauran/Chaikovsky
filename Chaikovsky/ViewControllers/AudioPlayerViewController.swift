@@ -11,11 +11,11 @@ import AVFoundation
 
 class AudioPlayerViewController: UIViewController {
 
-    static var playingSong: String? = nil
+    static var playingSong: Song? = nil
     static var sharedPlayer: AVAudioPlayer? = nil
     var player: AVAudioPlayer?
     var timer: Timer? = nil
-    var song = "p-i-chaykovskiy-neapolitanskaya-pesenka"
+    var song: Song!
 
 
     @IBOutlet weak var progressView: UIProgressView!
@@ -27,8 +27,9 @@ class AudioPlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        compositionLabel.text = song.title
         do {
-            let asset = NSDataAsset(name: song)
+            let asset = NSDataAsset(name: song.fileName)
             if let unwrappedAsset = asset {
 
                 if let sharedPlayer = AudioPlayerViewController.sharedPlayer, song == AudioPlayerViewController.playingSong {
