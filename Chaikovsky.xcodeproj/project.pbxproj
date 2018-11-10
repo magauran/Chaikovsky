@@ -26,6 +26,7 @@
 		8A4017FA21961DF0000C7627 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017F921961DF0000C7627 /* PreviewViewController.swift */; };
 		8A4017FC21961F30000C7627 /* MoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017FB21961F30000C7627 /* MoreButton.swift */; };
 		8A66EB142197564F009A0D6A /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66EB132197564F009A0D6A /* Song.swift */; };
+		8A66EB182197659D009A0D6A /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66EB172197659C009A0D6A /* UIColor+CustomColors.swift */; };
 		8AB94C232196368700BA8D4E /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB94C222196368700BA8D4E /* Artist.swift */; };
 		8AB94C2521963FDA00BA8D4E /* ArtistHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB94C2421963FDA00BA8D4E /* ArtistHeaderView.swift */; };
 		8AB94C27219640A800BA8D4E /* ArtistHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB94C26219640A800BA8D4E /* ArtistHeaderView.xib */; };
@@ -60,6 +61,7 @@
 		8A4017F921961DF0000C7627 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		8A4017FB21961F30000C7627 /* MoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreButton.swift; sourceTree = "<group>"; };
 		8A66EB132197564F009A0D6A /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		8A66EB172197659C009A0D6A /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
 		8AB94C222196368700BA8D4E /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		8AB94C2421963FDA00BA8D4E /* ArtistHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistHeaderView.swift; sourceTree = "<group>"; };
 		8AB94C26219640A800BA8D4E /* ArtistHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistHeaderView.xib; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				8A4017E02195CFFD000C7627 /* UITableViewCell+Reuse.swift */,
+				8A66EB172197659C009A0D6A /* UIColor+CustomColors.swift */,
 				8AB94C2821964C1000BA8D4E /* UIImage+ColorInit.swift */,
 			);
 			path = UIKit;
@@ -160,17 +163,11 @@
 			isa = PBXGroup;
 			children = (
 				8A4017F42195F23F000C7627 /* Layouts */,
-				8A4017E72195D0C0000C7627 /* FeatureTableViewCell.swift */,
+				8A66EB1521975E06009A0D6A /* Cells */,
+				8A66EB1621975E28009A0D6A /* Headers */,
 				8A4017E92195D17C000C7627 /* DesignableView.swift */,
 				8A4017FB21961F30000C7627 /* MoreButton.swift */,
-				8AB94C2C2196748C00BA8D4E /* MusicTableViewCell.swift */,
-				8AB94C302196DCF900BA8D4E /* DetailTableHeaderView.swift */,
-				8AB94C322196DD3200BA8D4E /* DetailTableHeaderView.xib */,
-				8AB94C2A2196672800BA8D4E /* BioTableViewCell.swift */,
-				8AB94C2421963FDA00BA8D4E /* ArtistHeaderView.swift */,
 				8A4017ED2195E954000C7627 /* PopUpView.swift */,
-				8AB94C26219640A800BA8D4E /* ArtistHeaderView.xib */,
-				8A4017F7219610E9000C7627 /* NameTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,6 +200,28 @@
 				8A66EB132197564F009A0D6A /* Song.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8A66EB1521975E06009A0D6A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8AB94C2C2196748C00BA8D4E /* MusicTableViewCell.swift */,
+				8AB94C2A2196672800BA8D4E /* BioTableViewCell.swift */,
+				8A4017F7219610E9000C7627 /* NameTableViewCell.swift */,
+				8A4017E72195D0C0000C7627 /* FeatureTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8A66EB1621975E28009A0D6A /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				8AB94C26219640A800BA8D4E /* ArtistHeaderView.xib */,
+				8AB94C2421963FDA00BA8D4E /* ArtistHeaderView.swift */,
+				8AB94C322196DD3200BA8D4E /* DetailTableHeaderView.xib */,
+				8AB94C302196DCF900BA8D4E /* DetailTableHeaderView.swift */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		8DD2490C2882EAF9CB8E646D /* Frameworks */ = {
@@ -309,12 +328,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Chaikovsky/Pods-Chaikovsky-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ExpandableLabel/ExpandableLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/FloatingPanel/FloatingPanel.framework",
 				"${BUILT_PRODUCTS_DIR}/GSKStretchyHeaderView/GSKStretchyHeaderView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSiriWaveformView/SwiftSiriWaveformView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpandableLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FloatingPanel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GSKStretchyHeaderView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSiriWaveformView.framework",
@@ -341,6 +362,7 @@
 				8A4017F22195F1E3000C7627 /* DetailFloatingLayout.swift in Sources */,
 				8AB94C2F219688BA00BA8D4E /* AudioPlayerViewController.swift in Sources */,
 				8A4017F8219610E9000C7627 /* NameTableViewCell.swift in Sources */,
+				8A66EB182197659D009A0D6A /* UIColor+CustomColors.swift in Sources */,
 				8A66EB142197564F009A0D6A /* Song.swift in Sources */,
 				8AB94C2B2196672800BA8D4E /* BioTableViewCell.swift in Sources */,
 				8AB94C232196368700BA8D4E /* Artist.swift in Sources */,

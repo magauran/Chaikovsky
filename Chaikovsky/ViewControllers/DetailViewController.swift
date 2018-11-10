@@ -8,6 +8,7 @@
 
 import UIKit
 import GSKStretchyHeaderView
+import ExpandableLabel
 
 class DetailViewController: UIViewController {
 
@@ -100,6 +101,7 @@ extension DetailViewController: UITableViewDataSource {
         case .bio:
             let cell: BioTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             cell.bioLabel.text = artist.shortBio
+            cell.bioLabel.delegate = self
             return cell
         case .music:
             let cell: MusicTableViewCell = tableView.dequeueReusableCell(for: indexPath)
@@ -169,5 +171,22 @@ extension DetailViewController: GSKStretchyHeaderViewStretchDelegate {
             navigationItem.leftBarButtonItem?.tintColor = .white
         }
     }
+
+}
+
+extension DetailViewController: ExpandableLabelDelegate {
+
+    func didExpandLabel(_ label: ExpandableLabel) {
+        tableView.endUpdates()
+    }
+
+    func didCollapseLabel(_ label: ExpandableLabel) { }
+
+
+    func willExpandLabel(_ label: ExpandableLabel) {
+        tableView.beginUpdates()
+    }
+
+    func willCollapseLabel(_ label: ExpandableLabel) { }
 
 }

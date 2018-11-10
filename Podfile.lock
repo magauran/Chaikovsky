@@ -1,15 +1,18 @@
 PODS:
+  - ExpandableLabel (0.5.1)
   - FloatingPanel (1.1.0)
   - GSKStretchyHeaderView (1.0.4)
   - SwiftSiriWaveformView (2.4.0)
 
 DEPENDENCIES:
+  - ExpandableLabel
   - FloatingPanel (from `https://github.com/SCENEE/FloatingPanel.git`, commit `630580beb62475c43f7c0efffa1ee9e0cba99643`)
   - GSKStretchyHeaderView
   - SwiftSiriWaveformView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - ExpandableLabel
     - GSKStretchyHeaderView
     - SwiftSiriWaveformView
 
@@ -24,10 +27,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SCENEE/FloatingPanel.git
 
 SPEC CHECKSUMS:
+  ExpandableLabel: 80783721b4d849bc62c19b44bbb88aa8bb518423
   FloatingPanel: 585c9ef2011bc31cbcd14756f2a09fb29ade6b45
   GSKStretchyHeaderView: 9743704c12bdc9cf7c7947bad3af8bf24f7061e3
   SwiftSiriWaveformView: baa04ed2089e854af00ea54c38a7700ca43d7ae0
 
-PODFILE CHECKSUM: 144f9cf8d494bab622112f444610bff0270837a7
+PODFILE CHECKSUM: b70a011c35768092ead5ed6499f556fcd4e6bce1
 
 COCOAPODS: 1.5.3

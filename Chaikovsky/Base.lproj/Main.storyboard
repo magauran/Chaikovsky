@@ -290,23 +290,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="297.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZJ-pH-MIo">
-                                                    <rect key="frame" x="20" y="10" width="280" height="277.5"/>
-                                                    <string key="text">Петр Ильич Чайковский — великий русский композитор, дирижер, пианист, автор десяти опер и трех балетов: «Лебединое озеро», «Спящая красавица», «Щелкунчик». Его произведения регулярно входят в число самых часто исполняемых во всем мире.</string>
-                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZJ-pH-MIo" customClass="ExpandableLabel" customModule="ExpandableLabel">
+                                                    <rect key="frame" x="10" y="10" width="300" height="277.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <string key="content">Петр Ильич Чайковский — великий русский композитор, дирижер, пианист, автор десяти опер и трех балетов: «Лебединое озеро», «Спящая красавица», «Щелкунчик». Его произведения регулярно входят в число самых часто исполняемых во всем мире.</string>
+                                                            <attributes>
+                                                                <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="0ZJ-pH-MIo" firstAttribute="top" secondItem="q9Y-Fs-6Q4" secondAttribute="top" constant="10" id="39q-Fe-26Z"/>
-                                                <constraint firstItem="0ZJ-pH-MIo" firstAttribute="trailing" secondItem="q9Y-Fs-6Q4" secondAttribute="trailing" constant="-20" id="CBo-vx-OXR"/>
-                                                <constraint firstItem="0ZJ-pH-MIo" firstAttribute="leading" secondItem="q9Y-Fs-6Q4" secondAttribute="leading" constant="20" id="VFi-AR-znW"/>
+                                                <constraint firstItem="0ZJ-pH-MIo" firstAttribute="trailing" secondItem="q9Y-Fs-6Q4" secondAttribute="trailing" constant="-10" id="CBo-vx-OXR"/>
+                                                <constraint firstItem="0ZJ-pH-MIo" firstAttribute="leading" secondItem="q9Y-Fs-6Q4" secondAttribute="leading" constant="10" id="VFi-AR-znW"/>
                                                 <constraint firstItem="0ZJ-pH-MIo" firstAttribute="bottom" secondItem="q9Y-Fs-6Q4" secondAttribute="bottom" constant="-10" id="obF-aq-Z1W"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="bioLabel" destination="0ZJ-pH-MIo" id="y9l-6e-WZ1"/>
+                                            <outlet property="bioLabel" destination="0ZJ-pH-MIo" id="rbf-eT-1DA"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MusicTableViewCell" rowHeight="28" id="8LF-Nl-TXa" customClass="MusicTableViewCell" customModule="Chaikovsky" customModuleProvider="target">
@@ -501,4 +507,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="eg2-BH-qXy"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.047058823529411764" green="0.44705882352941173" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
