@@ -20,6 +20,7 @@ class SiriViewController: UIViewController {
     private var isRecording = false
     private var recordedString = ""
     private var service = NetworkService()
+    private let synth = AVSpeechSynthesizer()
 
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet private weak var questionLabel: UILabel!
@@ -37,6 +38,11 @@ class SiriViewController: UIViewController {
         requestSpeechAuthorization()
         questionLabel.text = ""
         setupNavigationController()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        synth.stopSpeaking(at: AVSpeechBoundary.immediate)
     }
 
     @objc
@@ -89,7 +95,6 @@ class SiriViewController: UIViewController {
         let utterance = AVSpeechUtterance(string: text)
         utterance.voice = AVSpeechSynthesisVoice(language: "ru-RU")
 
-        let synth = AVSpeechSynthesizer()
         synth.speak(utterance)
     }
 

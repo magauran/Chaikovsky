@@ -33,8 +33,6 @@ class HomeTableViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.setBackgroundImage(UIImage(color: .white), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UINavigationBar().shadowImage
-        //extendedLayoutIncludesOpaqueBars = false
-        //tableView.contentOffset = HomeTableViewController.initialContentOffset
     }
 
     // MARK: - Table view data source
