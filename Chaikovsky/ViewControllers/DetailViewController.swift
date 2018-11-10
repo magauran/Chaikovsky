@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
         stretchyHeader = header
         stretchyHeader.stretchDelegate = self
         stretchyHeader.minimumContentHeight = 0
-        stretchyHeader.nameLabel.text = "Чайковский"
+        stretchyHeader.nameLabel.text = artist.name
         self.tableView.addSubview(self.stretchyHeader)
         if #available(iOS 11.0, *) {
             self.tableView.contentInsetAdjustmentBehavior = .never
@@ -65,14 +65,8 @@ extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            let cell: NameTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.configure(name: artist.name)
-            return cell
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PortraitTableViewCell", for: indexPath)
-            return cell
-        case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell", for: indexPath)
+            let cell: BioTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.bioLabel.text = artist.shortBio
             return cell
         default:
             return UITableViewCell()
@@ -87,7 +81,7 @@ extension DetailViewController: GSKStretchyHeaderViewStretchDelegate {
         headerView.isHidden = stretchFactor == 0.0
         if stretchFactor < 0.5 {
             print(stretchFactor)
-            self.navigationItem.title = "test"
+            self.navigationItem.title = artist.name
             let factor = stretchFactor < 0 ? 0.0 : stretchFactor
             let color = UIColor(white: 1.0, alpha: 1.0 - pow((factor * 2.0), 2))
             navigationController?.navigationBar.setBackgroundImage(UIImage(color: color), for: UIBarMetrics.default)

@@ -181,17 +181,17 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DescriptionTableViewCell" rowHeight="298" id="qJZ-p3-rbc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BioTableViewCell" rowHeight="298" id="qJZ-p3-rbc" customClass="BioTableViewCell" customModule="Chaikovsky" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="380" width="320" height="298"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qJZ-p3-rbc" id="q9Y-Fs-6Q4">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="298"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZJ-pH-MIo">
-                                                    <rect key="frame" x="20" y="10" width="335" height="278"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZJ-pH-MIo">
+                                                    <rect key="frame" x="20" y="10" width="280" height="278"/>
                                                     <string key="text">Петр Ильич Чайковский — великий русский композитор, дирижер, пианист, автор десяти опер и трех балетов: «Лебединое озеро», «Спящая красавица», «Щелкунчик». Его произведения регулярно входят в число самых часто исполняемых во всем мире.</string>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -203,6 +203,9 @@
                                                 <constraint firstItem="0ZJ-pH-MIo" firstAttribute="bottom" secondItem="q9Y-Fs-6Q4" secondAttribute="bottom" constant="-10" id="obF-aq-Z1W"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bioLabel" destination="0ZJ-pH-MIo" id="y9l-6e-WZ1"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ActionsTableViewCell" textLabel="tEJ-UP-csY" rowHeight="28" style="IBUITableViewCellStyleDefault" id="8LF-Nl-TXa">
                                         <rect key="frame" x="0.0" y="678" width="320" height="28"/>

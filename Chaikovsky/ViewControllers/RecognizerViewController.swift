@@ -95,7 +95,8 @@ class RecognizerViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == DetailViewController.className {
-            guard let destinationVC = segue.destination as? DetailViewController else { return }
+            guard let destinationNC = segue.destination as? UINavigationController else { return }
+            guard let destinationVC = destinationNC.topViewController as? DetailViewController else { return }
             destinationVC.artist = currentArtist
         }
     }
@@ -192,9 +193,8 @@ extension RecognizerViewController: ARSCNViewDelegate {
 
 
             if self.currentArtist.imageName != name || !self.floatingPanelIsShown || self.fpc.position == .tip {
-                self.currentArtist = Artist(name: name, description: "Великий русский композитор")
+                self.currentArtist = Artist(imageName: name)
                 self.showFloatingPanel()
-
             }
 
         }
