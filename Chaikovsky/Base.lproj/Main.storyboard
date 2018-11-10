@@ -193,10 +193,10 @@
             </objects>
             <point key="canvasLocation" x="4131" y="-143"/>
         </scene>
-        <!--Siri View Controller-->
+        <!--Голосовой помощник-->
         <scene sceneID="yfS-tI-ayD">
             <objects>
-                <viewController id="pLi-Mm-Nbc" customClass="SiriViewController" customModule="Chaikovsky" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Голосовой помощник" id="pLi-Mm-Nbc" customClass="SiriViewController" customModule="Chaikovsky" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nx4-LE-1n3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -208,8 +208,8 @@
                                     <constraint firstAttribute="height" constant="100" id="5oh-1i-x5Y"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кто такой чайковский?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbZ-QN-4Mx">
-                                <rect key="frame" x="10" y="20" width="222" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кто такой чайковский?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbZ-QN-4Mx">
+                                <rect key="frame" x="10" y="20" width="300" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -239,6 +239,7 @@
                             <constraint firstItem="PbZ-QN-4Mx" firstAttribute="leading" secondItem="iPa-RR-XY6" secondAttribute="leading" constant="10" id="M2S-Mm-0Tg"/>
                             <constraint firstItem="DKY-2A-Dqp" firstAttribute="leading" secondItem="iPa-RR-XY6" secondAttribute="leading" id="RdI-yv-feT"/>
                             <constraint firstItem="g73-2I-2F0" firstAttribute="centerX" secondItem="iPa-RR-XY6" secondAttribute="centerX" id="Rft-oQ-0kr"/>
+                            <constraint firstItem="iPa-RR-XY6" firstAttribute="trailing" secondItem="PbZ-QN-4Mx" secondAttribute="trailing" constant="10" id="VTc-k3-8em"/>
                             <constraint firstItem="DKY-2A-Dqp" firstAttribute="trailing" secondItem="iPa-RR-XY6" secondAttribute="trailing" id="XkC-TU-MVS"/>
                             <constraint firstItem="0VP-zN-uSR" firstAttribute="centerX" secondItem="iPa-RR-XY6" secondAttribute="centerX" id="aVz-jq-Btd"/>
                             <constraint firstItem="iPa-RR-XY6" firstAttribute="bottom" secondItem="DKY-2A-Dqp" secondAttribute="bottom" constant="208" id="rdT-el-8T3"/>

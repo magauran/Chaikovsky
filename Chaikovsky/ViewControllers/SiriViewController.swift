@@ -34,6 +34,8 @@ class SiriViewController: UIViewController {
         waveformView.amplitude = 1.0
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(refreshAudioView(_:)), userInfo: nil, repeats: true)
         requestSpeechAuthorization()
+        questionLabel.text = ""
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
 
     @objc
@@ -110,6 +112,7 @@ class SiriViewController: UIViewController {
 
                 let bestString = result.bestTranscription.formattedString
                 self.recordedString = bestString
+                self.questionLabel.text = bestString
 
                 var lastString: String = ""
                 for segment in result.bestTranscription.segments {
