@@ -193,6 +193,21 @@
             </objects>
             <point key="canvasLocation" x="4131" y="-143"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="yfS-tI-ayD">
+            <objects>
+                <viewController id="pLi-Mm-Nbc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nx4-LE-1n3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="iPa-RR-XY6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gre-Ux-Mrc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4131" y="308"/>
+        </scene>
         <!--Рахманинов-->
         <scene sceneID="jyT-vF-0r5">
             <objects>
@@ -214,7 +229,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZJ-pH-MIo">
-                                                    <rect key="frame" x="20" y="10" width="280" height="278"/>
+                                                    <rect key="frame" x="20" y="10" width="280" height="277.5"/>
                                                     <string key="text">Петр Ильич Чайковский — великий русский композитор, дирижер, пианист, автор десяти опер и трех балетов: «Лебединое озеро», «Спящая красавица», «Щелкунчик». Его произведения регулярно входят в число самых часто исполняемых во всем мире.</string>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -240,7 +255,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R7o-zQ-lDo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="2y5-Et-hBf"/>
@@ -261,13 +276,26 @@
                                     <outlet property="delegate" destination="TgQ-8u-t3Q" id="Rne-iU-6Yh"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byn-Gb-C7a">
+                                <rect key="frame" x="230" y="414" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="b6S-oE-18A"/>
+                                    <constraint firstAttribute="height" constant="60" id="hXh-ru-3LV"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="siri"/>
+                                <connections>
+                                    <segue destination="pLi-Mm-Nbc" kind="show" id="eg2-BH-qXy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="bJo-fv-aPe" secondAttribute="trailing" id="368-ai-ZNq"/>
                             <constraint firstItem="jqM-h3-r1W" firstAttribute="bottom" secondItem="bJo-fv-aPe" secondAttribute="bottom" id="8bi-mc-byh"/>
                             <constraint firstItem="bJo-fv-aPe" firstAttribute="top" secondItem="we1-cW-PJ4" secondAttribute="top" id="jXg-la-dxC"/>
+                            <constraint firstItem="jqM-h3-r1W" firstAttribute="trailing" secondItem="byn-Gb-C7a" secondAttribute="trailing" constant="30" id="szH-x6-Qjo"/>
                             <constraint firstItem="bJo-fv-aPe" firstAttribute="leading" secondItem="jqM-h3-r1W" secondAttribute="leading" id="woS-Le-Yzf"/>
+                            <constraint firstItem="jqM-h3-r1W" firstAttribute="bottom" secondItem="byn-Gb-C7a" secondAttribute="bottom" constant="30" id="yCt-1N-Jf3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jqM-h3-r1W"/>
                     </view>
@@ -395,5 +423,6 @@
     <resources>
         <image name="back" width="33" height="33"/>
         <image name="play" width="39" height="39"/>
+        <image name="siri" width="525" height="525"/>
     </resources>
 </document>

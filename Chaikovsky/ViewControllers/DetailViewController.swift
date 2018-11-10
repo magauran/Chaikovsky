@@ -21,6 +21,7 @@ class DetailViewController: UIViewController {
     var artist = Artist()
     var stretchyHeader: ArtistHeaderView!
 
+    @IBOutlet weak var siriButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -36,7 +37,11 @@ class DetailViewController: UIViewController {
             self.tableView.contentInsetAdjustmentBehavior = .never
         }
         setupNavigationBar()
+        setupHeaders()
+    }
 
+    @IBAction func runSiri(_ sender: Any) {
+        print("Hello Siri!")
     }
 
     // MARK: - Private methods
@@ -49,6 +54,10 @@ class DetailViewController: UIViewController {
         navigationItem.leftBarButtonItem?.tintColor = .white
     }
 
+    private func setupHeaders() {
+        let headerNib = UINib.init(nibName: DetailTableHeaderView.className, bundle: nil)
+        tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: DetailTableHeaderView.className)
+    }
 }
 
 extension DetailViewController: UITableViewDelegate {
@@ -63,6 +72,10 @@ extension DetailViewController: UITableViewDelegate {
         if let musicCell = cell as? MusicTableViewCell {
             musicCell.playerController?.removeFromParent()
         }
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 35
     }
 
 }
@@ -117,18 +130,22 @@ extension DetailViewController: UITableViewDataSource {
         }
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let enumSection = Section(rawValue: section) else { return nil }
-        switch enumSection {
-        case .bio:
-            return "Биография"
-        case .music:
-            return "Композиции"
-        case .video:
-            return "Видео"
-        case .concerts:
-            return "Концерты"
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: DetailTableHeaderView.className) as? DetailTableHeaderView {
+            guard let enumSection = Section(rawValue: section) else { return nil }
+            switch enumSection {
+            case .bio:
+                headerView.titleLabel.text =  "Биография"
+            case .music:
+                headerView.titleLabel.text =  "Композиции"
+            case .video:
+                headerView.titleLabel.text =  "Видео"
+            case .concerts:
+                headerView.titleLabel.text =  "Концерты"
+            }
+            return headerView
         }
+        return nil
     }
 
 }

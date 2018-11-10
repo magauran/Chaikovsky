@@ -31,6 +31,8 @@
 		8AB94C2B2196672800BA8D4E /* BioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB94C2A2196672800BA8D4E /* BioTableViewCell.swift */; };
 		8AB94C2D2196748C00BA8D4E /* MusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB94C2C2196748C00BA8D4E /* MusicTableViewCell.swift */; };
 		8AB94C2F219688BA00BA8D4E /* AudioPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB94C2E219688B900BA8D4E /* AudioPlayerViewController.swift */; };
+		8AB94C312196DCF900BA8D4E /* DetailTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB94C302196DCF900BA8D4E /* DetailTableHeaderView.swift */; };
+		8AB94C332196DD3200BA8D4E /* DetailTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB94C322196DD3200BA8D4E /* DetailTableHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		8AB94C2A2196672800BA8D4E /* BioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioTableViewCell.swift; sourceTree = "<group>"; };
 		8AB94C2C2196748C00BA8D4E /* MusicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTableViewCell.swift; sourceTree = "<group>"; };
 		8AB94C2E219688B900BA8D4E /* AudioPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewController.swift; sourceTree = "<group>"; };
+		8AB94C302196DCF900BA8D4E /* DetailTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableHeaderView.swift; sourceTree = "<group>"; };
+		8AB94C322196DD3200BA8D4E /* DetailTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableHeaderView.xib; sourceTree = "<group>"; };
 		B6B595FF4C2B678656D748EA /* Pods-Chaikovsky.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaikovsky.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chaikovsky/Pods-Chaikovsky.release.xcconfig"; sourceTree = "<group>"; };
 		EDD825BCAE61E041CE4C7D59 /* Pods_Chaikovsky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chaikovsky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -153,6 +157,8 @@
 				8A4017E92195D17C000C7627 /* DesignableView.swift */,
 				8A4017FB21961F30000C7627 /* MoreButton.swift */,
 				8AB94C2C2196748C00BA8D4E /* MusicTableViewCell.swift */,
+				8AB94C302196DCF900BA8D4E /* DetailTableHeaderView.swift */,
+				8AB94C322196DD3200BA8D4E /* DetailTableHeaderView.xib */,
 				8AB94C2A2196672800BA8D4E /* BioTableViewCell.swift */,
 				8AB94C2421963FDA00BA8D4E /* ArtistHeaderView.swift */,
 				8A4017ED2195E954000C7627 /* PopUpView.swift */,
@@ -253,6 +259,7 @@
 				8A4017D72195CA55000C7627 /* LaunchScreen.storyboard in Resources */,
 				8AB94C27219640A800BA8D4E /* ArtistHeaderView.xib in Resources */,
 				8A4017D42195CA55000C7627 /* Assets.xcassets in Resources */,
+				8AB94C332196DD3200BA8D4E /* DetailTableHeaderView.xib in Resources */,
 				8A4017D22195CA4F000C7627 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +329,7 @@
 				8A4017CB2195CA4F000C7627 /* AppDelegate.swift in Sources */,
 				8A4017FA21961DF0000C7627 /* PreviewViewController.swift in Sources */,
 				8A4017FC21961F30000C7627 /* MoreButton.swift in Sources */,
+				8AB94C312196DCF900BA8D4E /* DetailTableHeaderView.swift in Sources */,
 				8AB94C2521963FDA00BA8D4E /* ArtistHeaderView.swift in Sources */,
 				8AB94C2D2196748C00BA8D4E /* MusicTableViewCell.swift in Sources */,
 			);
