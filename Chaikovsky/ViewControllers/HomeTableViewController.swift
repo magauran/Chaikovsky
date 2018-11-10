@@ -31,7 +31,7 @@ class HomeTableViewController: UITableViewController {
         let cell: FeatureTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         switch indexPath.row {
         case 0:
-            cell.configure(title: "AR", color: .orange)
+            cell.configure(title: "", color: .clear, image: UIImage(named: "arcell"))
         case 1:
             cell.configure(title: "Siri", color: .green)
         case 2:

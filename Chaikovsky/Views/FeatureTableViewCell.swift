@@ -14,12 +14,14 @@ class FeatureTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var designableView: DesignableView!
     @IBOutlet private weak var titleLabel: UILabel!
-
+    @IBOutlet weak var pictureView: UIImageView!
+    
     // MARK: - Lifecycle
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        pictureView.layer.masksToBounds = true
+        pictureView.layer.cornerRadius = 15.0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -30,9 +32,10 @@ class FeatureTableViewCell: UITableViewCell {
 
     // MARK: - Cell configuration
 
-    func configure(title: String, color: UIColor) {
+    func configure(title: String, color: UIColor, image: UIImage? = nil) {
         titleLabel.text = title
         designableView.backgroundColor = color
+        pictureView.image = image
     }
 
 }
