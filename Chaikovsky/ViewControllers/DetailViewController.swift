@@ -59,6 +59,12 @@ extension DetailViewController: UITableViewDelegate {
         return UITableView.automaticDimension
     }
 
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let musicCell = cell as? MusicTableViewCell {
+            musicCell.playerController?.removeFromParent()
+        }
+    }
+
 }
 
 extension DetailViewController: UITableViewDataSource {
@@ -82,7 +88,14 @@ extension DetailViewController: UITableViewDataSource {
             return cell
         case .music:
             let cell: MusicTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.textLabel?.text = "Музыка"
+            guard let player = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: AudioPlayerViewController.className) as? AudioPlayerViewController else { return UITableViewCell()}
+            cell.playerController = player
+            addChild(player)
+            cell.playerController?.didMove(toParent: self)
+            player.view.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50)
+            if let playerView = player.view {
+                cell.contentView.addSubview(playerView)
+            }
             return cell
         default:
             return UITableViewCell()

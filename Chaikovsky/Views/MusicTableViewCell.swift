@@ -10,6 +10,8 @@ import UIKit
 
 class MusicTableViewCell: UITableViewCell {
 
+    weak var playerController: AudioPlayerViewController? = nil
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

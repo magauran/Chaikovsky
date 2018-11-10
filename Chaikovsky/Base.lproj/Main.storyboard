@@ -120,6 +120,78 @@
             </objects>
             <point key="canvasLocation" x="1454" y="-372"/>
         </scene>
+        <!--Audio Player View Controller-->
+        <scene sceneID="RGs-DC-W5Z">
+            <objects>
+                <viewController storyboardIdentifier="AudioPlayerViewController" id="B59-G3-auR" customClass="AudioPlayerViewController" customModule="Chaikovsky" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="acZ-UN-yhm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MKZ-f7-1wh">
+                                <rect key="frame" x="40" y="29" width="260" height="2"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dj0-fM-TWK">
+                                <rect key="frame" x="12" y="15" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="frm-Aq-pTl"/>
+                                    <constraint firstAttribute="width" constant="20" id="jkp-5J-syp"/>
+                                </constraints>
+                                <state key="normal" image="play"/>
+                                <connections>
+                                    <action selector="play:" destination="B59-G3-auR" eventType="touchUpInside" id="vhJ-Cj-09S"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prelude in C sharp minor, Op. 3/2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FX-Hf-p87">
+                                <rect key="frame" x="40" y="7" width="214" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:07" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P91-m4-lXe">
+                                <rect key="frame" x="40" y="31" width="26" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-4:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VS-2N-yFY">
+                                <rect key="frame" x="267" y="31" width="33" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MKZ-f7-1wh" firstAttribute="leading" secondItem="Dj0-fM-TWK" secondAttribute="trailing" constant="8" id="2BM-Uj-KmP"/>
+                            <constraint firstItem="MKZ-f7-1wh" firstAttribute="top" secondItem="8FX-Hf-p87" secondAttribute="bottom" constant="5" id="31k-fl-jQz"/>
+                            <constraint firstItem="5VS-2N-yFY" firstAttribute="top" secondItem="MKZ-f7-1wh" secondAttribute="bottom" id="3XA-pC-KNo"/>
+                            <constraint firstItem="P91-m4-lXe" firstAttribute="leading" secondItem="MKZ-f7-1wh" secondAttribute="leading" id="G6H-7O-iGG"/>
+                            <constraint firstItem="DqQ-HA-ymH" firstAttribute="trailing" secondItem="MKZ-f7-1wh" secondAttribute="trailing" constant="20" id="Q8d-oq-ugL"/>
+                            <constraint firstItem="P91-m4-lXe" firstAttribute="top" secondItem="MKZ-f7-1wh" secondAttribute="bottom" id="RYq-Jn-c2R"/>
+                            <constraint firstItem="5VS-2N-yFY" firstAttribute="trailing" secondItem="MKZ-f7-1wh" secondAttribute="trailing" id="SqE-kt-u8E"/>
+                            <constraint firstItem="MKZ-f7-1wh" firstAttribute="centerY" secondItem="DqQ-HA-ymH" secondAttribute="centerY" constant="5" id="Tuu-mb-ACp"/>
+                            <constraint firstItem="8FX-Hf-p87" firstAttribute="leading" secondItem="MKZ-f7-1wh" secondAttribute="leading" id="ZAx-2V-w53"/>
+                            <constraint firstItem="Dj0-fM-TWK" firstAttribute="leading" secondItem="DqQ-HA-ymH" secondAttribute="leading" constant="12" id="iw6-O3-NpG"/>
+                            <constraint firstItem="Dj0-fM-TWK" firstAttribute="centerY" secondItem="DqQ-HA-ymH" secondAttribute="centerY" id="oeC-E7-a6l"/>
+                            <constraint firstItem="5VS-2N-yFY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P91-m4-lXe" secondAttribute="trailing" constant="100" id="y0c-jm-gkB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DqQ-HA-ymH"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="50"/>
+                    <connections>
+                        <outlet property="compositionLabel" destination="8FX-Hf-p87" id="Txq-St-kfm"/>
+                        <outlet property="passedTimeLabel" destination="P91-m4-lXe" id="Kdd-qO-rhS"/>
+                        <outlet property="playButton" destination="Dj0-fM-TWK" id="UEZ-rb-T1e"/>
+                        <outlet property="progressView" destination="MKZ-f7-1wh" id="sfu-Pj-wsF"/>
+                        <outlet property="timeLeftLabel" destination="5VS-2N-yFY" id="G7s-bb-SvM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SSk-QF-vJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4131" y="-143"/>
+        </scene>
         <!--Рахманинов-->
         <scene sceneID="jyT-vF-0r5">
             <objects>
@@ -158,21 +230,27 @@
                                             <outlet property="bioLabel" destination="0ZJ-pH-MIo" id="y9l-6e-WZ1"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MusicTableViewCell" textLabel="tEJ-UP-csY" rowHeight="28" style="IBUITableViewCellStyleDefault" id="8LF-Nl-TXa" customClass="MusicTableViewCell" customModule="Chaikovsky" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MusicTableViewCell" rowHeight="28" id="8LF-Nl-TXa" customClass="MusicTableViewCell" customModule="Chaikovsky" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="353.5" width="320" height="28"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8LF-Nl-TXa" id="gdP-Ni-5dL">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8LF-Nl-TXa" id="gdP-Ni-5dL">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="28"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tEJ-UP-csY">
-                                                    <rect key="frame" x="15" y="0.0" width="290" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R7o-zQ-lDo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="2y5-Et-hBf"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="R7o-zQ-lDo" secondAttribute="trailing" id="UVv-Wy-Lwe"/>
+                                                <constraint firstItem="R7o-zQ-lDo" firstAttribute="top" secondItem="gdP-Ni-5dL" secondAttribute="top" id="cZQ-qY-xGz"/>
+                                                <constraint firstAttribute="bottom" secondItem="R7o-zQ-lDo" secondAttribute="bottom" id="u6v-uH-2KW"/>
+                                                <constraint firstItem="R7o-zQ-lDo" firstAttribute="leading" secondItem="gdP-Ni-5dL" secondAttribute="leading" id="uko-hE-KhJ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -314,5 +392,6 @@
     </scenes>
     <resources>
         <image name="back" width="33" height="33"/>
+        <image name="play" width="39" height="39"/>
     </resources>
 </document>
