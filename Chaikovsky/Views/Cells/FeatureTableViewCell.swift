@@ -32,7 +32,7 @@ class FeatureTableViewCell: UITableViewCell {
 
     // MARK: - Cell configuration
 
-    func configure(title: String, color: UIColor, image: UIImage? = nil) {
+    func configure(title: String = "", color: UIColor = .clear, image: UIImage? = nil) {
         titleLabel.text = title
         designableView.backgroundColor = color
         pictureView.image = image
