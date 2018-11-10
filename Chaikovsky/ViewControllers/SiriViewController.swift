@@ -36,7 +36,7 @@ class SiriViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(refreshAudioView(_:)), userInfo: nil, repeats: true)
         requestSpeechAuthorization()
         questionLabel.text = ""
-        navigationController?.navigationBar.prefersLargeTitles = false
+        setupNavigationController()
     }
 
     @objc
@@ -158,16 +158,11 @@ class SiriViewController: UIViewController {
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupNavigationController() {
+        navigationController?.navigationBar.tintColor = .linkColor
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
-    */
-
 }
 
 extension SiriViewController: SFSpeechRecognizerDelegate {

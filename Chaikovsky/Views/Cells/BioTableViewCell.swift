@@ -27,7 +27,7 @@ class BioTableViewCell: UITableViewCell {
     private func setupBioLabel() {
         bioLabel.numberOfLines = 5
         bioLabel.collapsed = true
-        let moreString = NSAttributedString(string: "Показать полностью...", attributes: [NSAttributedString.Key.foregroundColor:UIColor.linkColor])
+        let moreString = NSAttributedString(string: "Показать полностью...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.linkColor])
         bioLabel.collapsedAttributedLink = moreString
         bioLabel.ellipsis = nil
     }

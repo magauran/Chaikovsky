@@ -47,11 +47,18 @@ class RecognizerViewController: UIViewController {
             sceneView.debugOptions = .showFeaturePoints
             sceneView.session.run(configuration)
         }
+
+        navigationController?.navigationBar.isHidden = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         sceneView.session.pause()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.navigationBar.isHidden = false
     }
 
     // MARK: - IBActions
@@ -95,8 +102,7 @@ class RecognizerViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == DetailViewController.className {
-            guard let destinationNC = segue.destination as? UINavigationController else { return }
-            guard let destinationVC = destinationNC.topViewController as? DetailViewController else { return }
+            guard let destinationVC = segue.destination as? DetailViewController else { return }
             destinationVC.artist = currentArtist
         }
     }

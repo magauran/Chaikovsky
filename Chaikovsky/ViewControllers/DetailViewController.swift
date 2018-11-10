@@ -48,7 +48,8 @@ class DetailViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.view.backgroundColor = .clear
-        navigationItem.leftBarButtonItem?.tintColor = .white
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.isHidden = false
     }
 
     private func setupHeaders() {
@@ -151,7 +152,6 @@ extension DetailViewController: GSKStretchyHeaderViewStretchDelegate {
     func stretchyHeaderView(_ headerView: GSKStretchyHeaderView, didChangeStretchFactor stretchFactor: CGFloat) {
         headerView.isHidden = stretchFactor == 0.0
         if stretchFactor < 0.5 {
-            print(stretchFactor)
             self.navigationItem.title = artist.name
             let factor = stretchFactor < 0 ? 0.0 : stretchFactor
             let color = UIColor(white: 1.0, alpha: 1.0 - pow((factor * 2.0), 2))
@@ -166,9 +166,9 @@ extension DetailViewController: GSKStretchyHeaderViewStretchDelegate {
         }
 
         if stretchFactor < 0.3 {
-            navigationItem.leftBarButtonItem?.tintColor = .blue
+            navigationController?.navigationBar.tintColor = .linkColor
         } else {
-            navigationItem.leftBarButtonItem?.tintColor = .white
+            navigationController?.navigationBar.tintColor = .white
         }
     }
 

@@ -17,9 +17,25 @@ class HomeTableViewController: UITableViewController {
         title = "Chaikovsky"
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupNavigationController()
+    }
+
     // MARK: - IBActions
 
     @IBAction func unwindToHomeViewController(segue: UIStoryboardSegue) { }
+
+    // MARK: - Private methods
+
+    private func setupNavigationController() {
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(color: .white), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UINavigationBar().shadowImage
+        //extendedLayoutIncludesOpaqueBars = false
+        //tableView.contentOffset = HomeTableViewController.initialContentOffset
+    }
 
     // MARK: - Table view data source
 
