@@ -198,11 +198,11 @@
             <objects>
                 <viewController id="pLi-Mm-Nbc" customClass="SiriViewController" customModule="Chaikovsky" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nx4-LE-1n3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKY-2A-Dqp" customClass="SwiftSiriWaveformView" customModule="SwiftSiriWaveformView">
-                                <rect key="frame" x="0.0" y="196" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="260" width="320" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="5oh-1i-x5Y"/>
@@ -393,6 +393,7 @@
                     <navigationItem key="navigationItem" id="szl-ye-cj0"/>
                     <connections>
                         <segue destination="BV1-FR-VrT" kind="presentation" identifier="RecognizerViewController" id="gay-Zs-5D9"/>
+                        <segue destination="pLi-Mm-Nbc" kind="show" identifier="SiriViewController" id="uOD-NA-eqd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2q9-cy-Pud" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -442,4 +443,7 @@
         <image name="play" width="39" height="39"/>
         <image name="siri" width="525" height="525"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="uOD-NA-eqd"/>
+    </inferredMetricsTieBreakers>
 </document>

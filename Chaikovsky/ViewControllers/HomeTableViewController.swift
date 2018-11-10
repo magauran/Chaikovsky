@@ -33,7 +33,7 @@ class HomeTableViewController: UITableViewController {
         case 0:
             cell.configure(title: "AR", color: .orange)
         case 1:
-            cell.configure(title: "Music", color: .green)
+            cell.configure(title: "Siri", color: .green)
         case 2:
             cell.configure(title: "Bio", color: .yellow)
         default:
@@ -48,6 +48,8 @@ class HomeTableViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             performSegue(withIdentifier: RecognizerViewController.className, sender: nil)
+        case 1:
+            performSegue(withIdentifier: SiriViewController.className, sender: nil)
         default:
             print(":)")
         }
