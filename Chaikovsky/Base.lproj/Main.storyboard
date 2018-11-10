@@ -208,9 +208,18 @@
                                     <constraint firstAttribute="height" constant="100" id="5oh-1i-x5Y"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHA-dL-8qs">
+                                <rect key="frame" x="137" y="518" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="start:" destination="pLi-Mm-Nbc" eventType="touchUpInside" id="hda-1Q-YsJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="fHA-dL-8qs" firstAttribute="centerX" secondItem="iPa-RR-XY6" secondAttribute="centerX" id="AW4-UO-6Ex"/>
+                            <constraint firstItem="iPa-RR-XY6" firstAttribute="bottom" secondItem="fHA-dL-8qs" secondAttribute="bottom" constant="20" id="DJ8-TO-FBB"/>
                             <constraint firstItem="DKY-2A-Dqp" firstAttribute="leading" secondItem="iPa-RR-XY6" secondAttribute="leading" id="RdI-yv-feT"/>
                             <constraint firstItem="DKY-2A-Dqp" firstAttribute="trailing" secondItem="iPa-RR-XY6" secondAttribute="trailing" id="XkC-TU-MVS"/>
                             <constraint firstItem="iPa-RR-XY6" firstAttribute="bottom" secondItem="DKY-2A-Dqp" secondAttribute="bottom" constant="208" id="rdT-el-8T3"/>
