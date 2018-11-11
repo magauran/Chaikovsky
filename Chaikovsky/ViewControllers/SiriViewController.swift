@@ -13,7 +13,9 @@ import AVFoundation
 
 class SiriViewController: UIViewController {
 
-    @IBOutlet private weak var waveformView: SwiftSiriWaveformView!
+    // MARK: - Properties
+
+    @IBOutlet weak private var waveformView: SwiftSiriWaveformView!
     private var timer: Timer?
     private var change: CGFloat = 0.01
     private var hue: CGFloat = 0.0
@@ -21,17 +23,19 @@ class SiriViewController: UIViewController {
     private var service = NetworkService()
     private let synth = AVSpeechSynthesizer()
 
-    @IBOutlet weak var tipsStackView: UIStackView!
-    @IBOutlet weak var recordButton: UIButton!
-    @IBOutlet private weak var questionLabel: UILabel!
-    @IBOutlet weak var answerLabel: UILabel!
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak private var tipsStackView: UIStackView!
+    @IBOutlet weak private var recordButton: UIButton!
+    @IBOutlet weak private var questionLabel: UILabel!
+    @IBOutlet weak private var answerLabel: UILabel!
+    @IBOutlet weak private var scrollView: UIScrollView!
+    @IBOutlet weak private var instructionLabel: UILabel!
 
-    @IBOutlet weak var instructionLabel: UILabel!
-    let audioEngine = AVAudioEngine()
-    let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer(locale: Locale.init(identifier: "ru-RU"))
-    let request = SFSpeechAudioBufferRecognitionRequest()
-    var recognitionTask: SFSpeechRecognitionTask?
+    private let audioEngine = AVAudioEngine()
+    private let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer(locale: Locale.init(identifier: "ru-RU"))
+    private let request = SFSpeechAudioBufferRecognitionRequest()
+    private var recognitionTask: SFSpeechRecognitionTask?
+
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +52,10 @@ class SiriViewController: UIViewController {
         synth.stopSpeaking(at: AVSpeechBoundary.immediate)
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
+    // MARK: - Private methods
 
     @objc
-    func refreshAudioView(_ : Timer) {
+    private func refreshAudioView(_ : Timer) {
         if waveformView.amplitude <= waveformView.idleAmplitude || waveformView.amplitude > 1.0 {
             self.change *= -1.0
         }
@@ -63,7 +65,8 @@ class SiriViewController: UIViewController {
         if hue >= 1.0 { hue = 0.0 }
     }
 
-    @IBAction func start(_ sender: Any) {
+    @IBAction
+    private func start(_ sender: Any) {
         tipsStackView.isHidden = true
         recognizeSpeech()
         instructionLabel.text = "Нажми, чтобы завершить вопрос"
@@ -73,7 +76,7 @@ class SiriViewController: UIViewController {
         synth.stopSpeaking(at: AVSpeechBoundary.immediate)
     }
 
-    func setSessionPlayerOn() {
+    private func setSessionPlayerOn() {
         do {
             try AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, options: .mixWithOthers)
         } catch _ {}
@@ -120,7 +123,7 @@ class SiriViewController: UIViewController {
         })
     }
 
-    func requestSpeechAuthorization() {
+    private func requestSpeechAuthorization() {
         SFSpeechRecognizer.requestAuthorization { authStatus in
             print(authStatus)
         }
@@ -137,7 +140,8 @@ class SiriViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(refreshAudioView(_:)), userInfo: nil, repeats: true)
     }
 
-    @IBAction func stop(_ sender: Any) {
+    @IBAction
+    private func stop(_ sender: Any) {
         audioEngine.stop()
         audioEngine.inputNode.removeTap(onBus: 0)
         recognitionTask?.cancel()

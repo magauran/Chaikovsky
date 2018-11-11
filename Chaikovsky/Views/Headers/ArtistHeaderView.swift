@@ -11,8 +11,9 @@ import GSKStretchyHeaderView
 
 class ArtistHeaderView: GSKStretchyHeaderView {
 
+    // MARK: - Properties
+
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var artistImageView: UIImageView!
     
 }

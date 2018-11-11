@@ -10,6 +10,8 @@ import UIKit
 
 class DetailTableHeaderView: UITableViewHeaderFooterView {
 
+    // MARK: - Private
+    
     @IBOutlet weak var titleLabel: UILabel!
 
 }

@@ -23,8 +23,8 @@ class DetailViewController: UIViewController {
     var artist = Artist()
     var stretchyHeader: ArtistHeaderView!
 
-    @IBOutlet weak var siriButton: UIButton!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak private var siriButton: UIButton!
+    @IBOutlet weak private var tableView: UITableView!
 
     // MARK: - Lifecycle
 
@@ -37,7 +37,7 @@ class DetailViewController: UIViewController {
         stretchyHeader.stretchDelegate = self
         stretchyHeader.minimumContentHeight = 0
         stretchyHeader.nameLabel.text = artist.name
-        self.tableView.addSubview(self.stretchyHeader)
+        tableView.addSubview(self.stretchyHeader)
         if #available(iOS 11.0, *) {
             self.tableView.contentInsetAdjustmentBehavior = .never
         }
@@ -178,6 +178,8 @@ extension DetailViewController: UITableViewDataSource {
 
 extension DetailViewController: GSKStretchyHeaderViewStretchDelegate {
 
+    // MARK: - GSKStretchyHeaderViewStretchDelegate
+
     func stretchyHeaderView(_ headerView: GSKStretchyHeaderView, didChangeStretchFactor stretchFactor: CGFloat) {
         headerView.isHidden = stretchFactor == 0.0
         if stretchFactor < 0.5 {
@@ -205,6 +207,7 @@ extension DetailViewController: GSKStretchyHeaderViewStretchDelegate {
 
 extension DetailViewController: ExpandableLabelDelegate {
 
+    // MARK: - ExpandableLabelDelegate
     func didExpandLabel(_ label: ExpandableLabel) {
         tableView.endUpdates()
     }

@@ -42,7 +42,8 @@ class HomeViewController: UIViewController {
 
     // MARK: - IBActions
 
-    @IBAction func unwindToHomeViewController(segue: UIStoryboardSegue) { }
+    @IBAction
+    func unwindToHomeViewController(segue: UIStoryboardSegue) { }
 
     // MARK: - Private methods
 

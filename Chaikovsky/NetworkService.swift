@@ -9,22 +9,13 @@
 import Foundation
 import UIKit
 
-extension String{
-    var encodeUrl : String {
-        return self.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
-    }
-    var decodeUrl : String {
-        return self.removingPercentEncoding!
-    }
-}
-
 class NetworkService: NSObject, URLSessionDelegate {
 
     typealias Answer = String
     typealias AnswerHandler = (Answer?) -> Void
-    static let urlString = "https://94.130.19.98:5000"
+    static private let urlString = "https://94.130.19.98:5000"
 
-    lazy var session: URLSession = {
+    lazy private var session: URLSession = {
         let sessionConfiguration = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfiguration, delegate: self, delegateQueue: nil)
         return session

@@ -12,9 +12,9 @@ class FeatureTableViewCell: UITableViewCell {
 
     // MARK: - Properties
 
-    @IBOutlet private weak var designableView: DesignableView!
-    @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet weak var pictureView: UIImageView!
+    @IBOutlet weak private var designableView: DesignableView!
+    @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet weak private var pictureView: UIImageView!
     
     // MARK: - Lifecycle
 
@@ -22,12 +22,6 @@ class FeatureTableViewCell: UITableViewCell {
         super.awakeFromNib()
         pictureView.layer.masksToBounds = true
         pictureView.layer.cornerRadius = 15.0
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
     // MARK: - Cell configuration

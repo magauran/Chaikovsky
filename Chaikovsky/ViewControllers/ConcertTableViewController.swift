@@ -10,16 +10,20 @@ import UIKit
 
 class ConcertTableViewController: UITableViewController {
 
-    @IBOutlet weak var calendarButton: UIButton!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var programLabel: UILabel!
-    @IBOutlet weak var membersLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var hallLabel: UILabel!
-    @IBOutlet weak var ticketLabel: UILabel!
-    @IBOutlet weak var buyButton: UIButton!
+    // MARK: - Properties
+
+    @IBOutlet weak private var calendarButton: UIButton!
+    @IBOutlet weak private var nameLabel: UILabel!
+    @IBOutlet weak private var programLabel: UILabel!
+    @IBOutlet weak private var membersLabel: UILabel!
+    @IBOutlet weak private var dateLabel: UILabel!
+    @IBOutlet weak private var hallLabel: UILabel!
+    @IBOutlet weak private var ticketLabel: UILabel!
+    @IBOutlet weak private var buyButton: UIButton!
 
     var concert: Concert? = nil
+
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,12 +44,15 @@ class ConcertTableViewController: UITableViewController {
         calendarButton.layer.cornerRadius = 15.0
     }
 
+    // MARK: - IBActions
+
     @IBAction func buy(_ sender: Any) {
         guard let urlString = concert?.buyUrl else { return }
         guard let url = URL(string: urlString) else { return }
         UIApplication.shared.open(url, options: [:])
     }
 
+    // MARK: - Table view delegate
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension

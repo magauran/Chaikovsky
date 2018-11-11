@@ -20,7 +20,7 @@ class RecognizerViewController: UIViewController {
     private var imageConfiguration: ARImageTrackingConfiguration?
     private var hasSetWorldOrigin = false
 
-    private lazy var fpc: FloatingPanelController = {
+    lazy private var fpc: FloatingPanelController = {
         let fpc = FloatingPanelController()
         fpc.delegate = self
         fpc.surfaceView.cornerRadius = 12.0
@@ -212,6 +212,8 @@ extension RecognizerViewController: FloatingPanelControllerDelegate {
 
 extension RecognizerViewController: PreviewViewControllerDelegate {
 
+    // MARK: - PreviewViewControllerDelegate
+    
     func didTapMoreButton() {
         performSegue(withIdentifier: DetailViewController.className, sender: nil)
     }

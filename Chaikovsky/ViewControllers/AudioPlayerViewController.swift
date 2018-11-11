@@ -11,18 +11,21 @@ import AVFoundation
 
 class AudioPlayerViewController: UIViewController {
 
-    static var playingSong: Song? = nil
+    // MARK: - Properties
+
+    static private var playingSong: Song? = nil
     static var sharedPlayer: AVAudioPlayer? = nil
-    var player: AVAudioPlayer?
-    var timer: Timer? = nil
+    private var player: AVAudioPlayer?
+    private var timer: Timer? = nil
     var song: Song!
 
+    @IBOutlet weak private var progressView: UIProgressView!
+    @IBOutlet weak private var playButton: UIButton!
+    @IBOutlet weak private var compositionLabel: UILabel!
+    @IBOutlet weak private var passedTimeLabel: UILabel!
+    @IBOutlet weak private var timeLeftLabel: UILabel!
 
-    @IBOutlet weak var progressView: UIProgressView!
-    @IBOutlet weak var playButton: UIButton!
-    @IBOutlet weak var compositionLabel: UILabel!
-    @IBOutlet weak var passedTimeLabel: UILabel!
-    @IBOutlet weak var timeLeftLabel: UILabel!
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +65,8 @@ class AudioPlayerViewController: UIViewController {
         super.viewDidDisappear(animated)
         stop()
     }
+
+    // MARK: - IBActions
     
     @IBAction func play(_ sender: UIButton) {
         if let unwrappedPlayer = player {
@@ -78,7 +83,9 @@ class AudioPlayerViewController: UIViewController {
         }
     }
 
-    func stop() {
+    // MARK: - Private methods
+
+    private func stop() {
         player?.stop()
         player?.currentTime = 0
         passedTimeLabel.text = ""

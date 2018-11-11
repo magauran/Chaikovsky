@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		38829824B2927504A4255F59 /* Pods_Chaikovsky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDD825BCAE61E041CE4C7D59 /* Pods_Chaikovsky.framework */; };
+		8A0FBB12219855400043E94A /* String+CodeURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0FBB11219855400043E94A /* String+CodeURL.swift */; };
 		8A1EDFCB2197311000288B38 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1EDFCA2197311000288B38 /* NetworkService.swift */; };
 		8A243A9E2197C3430073614D /* ConcertTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A243A9D2197C3430073614D /* ConcertTableViewController.swift */; };
 		8A4017CB2195CA4F000C7627 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017CA2195CA4F000C7627 /* AppDelegate.swift */; };
@@ -20,7 +21,6 @@
 		8A4017E42195D02D000C7627 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017E32195D02D000C7627 /* NSObject+ClassName.swift */; };
 		8A4017E82195D0C1000C7627 /* FeatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017E72195D0C0000C7627 /* FeatureTableViewCell.swift */; };
 		8A4017EA2195D17C000C7627 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017E92195D17C000C7627 /* DesignableView.swift */; };
-		8A4017EE2195E954000C7627 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017ED2195E954000C7627 /* PopUpView.swift */; };
 		8A4017F22195F1E3000C7627 /* DetailFloatingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017F12195F1E3000C7627 /* DetailFloatingLayout.swift */; };
 		8A4017F62195F274000C7627 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017F52195F274000C7627 /* DetailViewController.swift */; };
 		8A4017F8219610E9000C7627 /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017F7219610E9000C7627 /* NameTableViewCell.swift */; };
@@ -47,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		85476BCF404968193A73C4E6 /* Pods-Chaikovsky.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaikovsky.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chaikovsky/Pods-Chaikovsky.debug.xcconfig"; sourceTree = "<group>"; };
+		8A0FBB11219855400043E94A /* String+CodeURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CodeURL.swift"; sourceTree = "<group>"; };
 		8A1EDFCA2197311000288B38 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		8A243A9D2197C3430073614D /* ConcertTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcertTableViewController.swift; sourceTree = "<group>"; };
 		8A4017C72195CA4F000C7627 /* Chaikovsky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chaikovsky.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,7 +62,6 @@
 		8A4017E32195D02D000C7627 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		8A4017E72195D0C0000C7627 /* FeatureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTableViewCell.swift; sourceTree = "<group>"; };
 		8A4017E92195D17C000C7627 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
-		8A4017ED2195E954000C7627 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		8A4017F12195F1E3000C7627 /* DetailFloatingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFloatingLayout.swift; sourceTree = "<group>"; };
 		8A4017F52195F274000C7627 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8A4017F7219610E9000C7627 /* NameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
@@ -109,6 +109,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8A0FBB10219855100043E94A /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				8A0FBB11219855400043E94A /* String+CodeURL.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
 		8A4017BE2195CA4F000C7627 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +156,7 @@
 		8A4017E22195D011000C7627 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8A0FBB10219855100043E94A /* Swift */,
 				8A4017E62195D049000C7627 /* UIKit */,
 				8A4017E52195D03E000C7627 /* Objective-C */,
 			);
@@ -181,7 +190,6 @@
 				8A66EB1621975E28009A0D6A /* Headers */,
 				8A4017E92195D17C000C7627 /* DesignableView.swift */,
 				8A4017FB21961F30000C7627 /* MoreButton.swift */,
-				8A4017ED2195E954000C7627 /* PopUpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -373,7 +381,6 @@
 				8A1EDFCB2197311000288B38 /* NetworkService.swift in Sources */,
 				8A4017E82195D0C1000C7627 /* FeatureTableViewCell.swift in Sources */,
 				8AB94C2921964C1100BA8D4E /* UIImage+ColorInit.swift in Sources */,
-				8A4017EE2195E954000C7627 /* PopUpView.swift in Sources */,
 				8A66EB1A219781B8009A0D6A /* UIDevice+Vibrate.swift in Sources */,
 				8A243A9E2197C3430073614D /* ConcertTableViewController.swift in Sources */,
 				8A4017DF2195CCDA000C7627 /* HomeViewController.swift in Sources */,
@@ -383,6 +390,7 @@
 				8A66EB2C2197BA90009A0D6A /* ColorHash.swift in Sources */,
 				8AB94C2F219688BA00BA8D4E /* AudioPlayerViewController.swift in Sources */,
 				8A66EB282197A30A009A0D6A /* Concert.swift in Sources */,
+				8A0FBB12219855400043E94A /* String+CodeURL.swift in Sources */,
 				8A4017F8219610E9000C7627 /* NameTableViewCell.swift in Sources */,
 				8A66EB182197659D009A0D6A /* UIColor+CustomColors.swift in Sources */,
 				8A66EB26219793DB009A0D6A /* ConcertsTableViewController.swift in Sources */,

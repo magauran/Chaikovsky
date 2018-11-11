@@ -10,8 +10,12 @@ import UIKit
 
 class ConcertsTableViewController: UITableViewController {
 
+    // MARK: - Properties
+
     var artist: Artist? = nil
-    var concerts: [Concert] = [Concert]()
+    private var concerts: [Concert] = [Concert]()
+
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,4 +88,5 @@ class ConcertsTableViewController: UITableViewController {
             }
         }
     }
+
 }

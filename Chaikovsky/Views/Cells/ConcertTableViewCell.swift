@@ -10,11 +10,14 @@ import UIKit
 
 class ConcertTableViewCell: UITableViewCell {
 
+    // MARK: - Properties
+
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var membersLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var designableView: DesignableView!
 
+    // MARK: - Lifecucles
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none

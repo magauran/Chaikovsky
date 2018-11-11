@@ -20,8 +20,8 @@ class PreviewViewController: UIViewController {
 
     weak var delegate: PreviewViewControllerDelegate?
     var artist: Artist?
-    @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet weak private var nameLabel: UILabel!
+    @IBOutlet weak private var descriptionLabel: UILabel!
 
     // MARK: - Lifecycle
 
