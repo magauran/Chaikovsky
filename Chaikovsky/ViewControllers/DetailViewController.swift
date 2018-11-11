@@ -28,6 +28,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         let nibViews = Bundle.main.loadNibNamed(ArtistHeaderView.className, owner: self, options: nil)
         guard let header = nibViews?.first as? ArtistHeaderView else { return }
+        header.artistImageView.image = UIImage(named: "\(artist.imageName)-header")
         stretchyHeader = header
         stretchyHeader.stretchDelegate = self
         stretchyHeader.minimumContentHeight = 0

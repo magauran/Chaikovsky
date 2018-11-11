@@ -13,5 +13,6 @@ class ArtistHeaderView: GSKStretchyHeaderView {
 
     @IBOutlet weak var nameLabel: UILabel!
     
-
+    @IBOutlet weak var artistImageView: UIImageView!
+    
 }
