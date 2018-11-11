@@ -22,6 +22,7 @@ class SiriViewController: UIViewController {
     private var service = NetworkService()
     private let synth = AVSpeechSynthesizer()
 
+    @IBOutlet weak var tipsStackView: UIStackView!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet private weak var questionLabel: UILabel!
 
@@ -56,6 +57,7 @@ class SiriViewController: UIViewController {
     }
 
     @IBAction func start(_ sender: Any) {
+        tipsStackView.isHidden = true
         if !isRecording {
             recognizeSpeech()
             instructionLabel.text = "Нажми, чтобы завершить вопрос"
