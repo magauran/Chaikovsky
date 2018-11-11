@@ -15,12 +15,14 @@ class Artist {
     let imageName: String
     let shortBio: String
     let bio: String = ""
+    let serverName: String?
 
     init() {
         self.name = ""
         self.description = ""
         self.imageName = ""
         self.shortBio = ""
+        self.serverName = nil
     }
 
     init(name: String, description: String) {
@@ -28,6 +30,7 @@ class Artist {
         self.description = description
         self.imageName = name
         self.shortBio = ""
+        self.serverName = nil
     }
 
     init(imageName: String) {
@@ -57,6 +60,7 @@ class Artist {
             self.name = "Рахманинов С. В."
             self.description = "Русский композитор, пианист, дирижёр"
             self.imageName = imageName
+            self.serverName = "Рахманинов"
         default:
             self.shortBio = """
             Родился 7 мая 1840 г. в селении при Камско-Воткинском заводе (ныне город Воткинск,
@@ -74,9 +78,10 @@ class Artist {
             Последние годы жизни Пётр Ильич провёл в Клину под Москвой, где в 1892 г. приобрёл дом (с 1894 г. музей композитора).
             Скончался 6 ноября 1893 г. в Петербурге.
             """
-            self.name = "Чайковский"
+            self.name = "Чайковский П. И."
             self.description = "Великий русский композитор"
             self.imageName = imageName
+            self.serverName = "Чайковский"
         }
     }
 

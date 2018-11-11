@@ -369,7 +369,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2291" y="559"/>
+            <point key="canvasLocation" x="2231" y="558"/>
         </scene>
         <!--Концерт-->
         <scene sceneID="jXs-yn-qQc">
@@ -576,7 +576,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3JH-t3-mCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2969" y="907"/>
+            <point key="canvasLocation" x="3023" y="942"/>
         </scene>
         <!--Рахманинов-->
         <scene sceneID="jyT-vF-0r5">
@@ -679,11 +679,12 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="bJo-fv-aPe" id="jPw-nU-lUn"/>
+                        <segue destination="Hhi-vf-1er" kind="show" identifier="ConcertsTableViewController" id="P3T-JE-3Js"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJO-07-ga3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2263" y="-281"/>
+            <point key="canvasLocation" x="2231" y="-280"/>
         </scene>
         <!--Home Table View Controller-->
         <scene sceneID="icz-uG-55C">
@@ -789,6 +790,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eg2-BH-qXy"/>
+        <segue reference="P3T-JE-3Js"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.047058823529411764" green="0.44705882352941173" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

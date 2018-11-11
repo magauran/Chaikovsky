@@ -10,6 +10,7 @@ import UIKit
 
 class ConcertsTableViewController: UITableViewController {
 
+    var artist: Artist? = nil
     var concerts: [Concert] = [Concert]()
 
     override func viewDidLoad() {
@@ -20,7 +21,7 @@ class ConcertsTableViewController: UITableViewController {
     // MARK: - Private methods
 
     private func loadData() {
-        NetworkService().playbill(composer: "Рахманинов") { (conc) in
+        NetworkService().playbill(composer: artist?.serverName) { (conc) in
             if let unwrappedConcerts = conc {
                 self.concerts = unwrappedConcerts
                 DispatchQueue.main.async {

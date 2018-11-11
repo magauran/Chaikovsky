@@ -15,7 +15,6 @@ class DetailViewController: UIViewController {
     enum Section: Int, CaseIterable {
         case bio
         case music
-        case video
         case concerts
     }
 
@@ -56,6 +55,17 @@ class DetailViewController: UIViewController {
         let headerNib = UINib.init(nibName: DetailTableHeaderView.className, bundle: nil)
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: DetailTableHeaderView.className)
     }
+
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == ConcertsTableViewController.className {
+            if let destinationVC = segue.destination as? ConcertsTableViewController {
+                destinationVC.artist = artist
+            }
+        }
+    }
+
 }
 
 extension DetailViewController: UITableViewDelegate {
@@ -74,6 +84,15 @@ extension DetailViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 35
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let enumSection = Section(rawValue: indexPath.section) else { return }
+        switch enumSection {
+        case .concerts:
+            performSegue(withIdentifier: ConcertsTableViewController.className, sender: nil)
+        default: return
+        }
     }
 
 }
@@ -122,8 +141,11 @@ extension DetailViewController: UITableViewDataSource {
                 NSLayoutConstraint(item: playerView, attribute: .bottom, relatedBy: .equal, toItem: cell.contentView, attribute: .bottom, multiplier: 1.0, constant: 0.0).isActive = true
             }
             return cell
-        default:
-            return UITableViewCell()
+        case .concerts:
+            let cell = UITableViewCell()
+            cell.textLabel?.text = "Посмотреть все концерты"
+            cell.textLabel?.textColor = .linkColor
+            return cell
         }
     }
 
@@ -135,8 +157,6 @@ extension DetailViewController: UITableViewDataSource {
                 headerView.titleLabel.text =  "Биография"
             case .music:
                 headerView.titleLabel.text =  "Композиции"
-            case .video:
-                headerView.titleLabel.text =  "Видео"
             case .concerts:
                 headerView.titleLabel.text =  "Концерты"
             }
