@@ -67,9 +67,9 @@ class HomeTableViewController: UITableViewController {
         case .siri:
             cell.configure(image: UIImage(named: "siriCell"))
         case .vk:
-            cell.configure(title: "VK", color: .yellow)
+            cell.configure(image: UIImage(named: "vkCell"))
         case .concerts:
-            cell.configure(title: "Tickets", color: .blue)
+            cell.configure(image: UIImage(named: "concertCell"))
         }
 
         return cell
