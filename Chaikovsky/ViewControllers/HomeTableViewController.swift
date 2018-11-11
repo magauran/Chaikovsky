@@ -103,7 +103,8 @@ class HomeTableViewController: UITableViewController {
         case .siri:
             performSegue(withIdentifier: SiriViewController.className, sender: nil)
         case .vk:
-            print(":)")
+            let url = URL(string: "vk://vk.com/im?sel=-173731650")!
+            UIApplication.shared.open(url, options: [:])
         case .concerts:
             performSegue(withIdentifier: ConcertsTableViewController.className, sender: nil)
         }
