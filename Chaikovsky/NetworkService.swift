@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String{
     var encodeUrl : String {
@@ -35,7 +36,8 @@ class NetworkService: NSObject, URLSessionDelegate {
             completionHandler(nil)
             return
         }
-        let parameterDictionary = ["request" : question]
+        let parameterDictionary = ["request" : question,
+                                   "id" : UIDevice.current.identifierForVendor!.uuidString]
         var request = URLRequest(url: serviceUrl)
         request.httpMethod = "POST"
         request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
