@@ -17,7 +17,6 @@ class SiriViewController: UIViewController {
     private var timer: Timer?
     private var change: CGFloat = 0.01
     private var hue: CGFloat = 0.0
-    private var isRecording = false
     private var recordedString = ""
     private var service = NetworkService()
     private let synth = AVSpeechSynthesizer()
@@ -66,14 +65,12 @@ class SiriViewController: UIViewController {
 
     @IBAction func start(_ sender: Any) {
         tipsStackView.isHidden = true
-        if !isRecording {
-            recognizeSpeech()
-            instructionLabel.text = "Нажми, чтобы завершить вопрос"
-        }
-        isRecording.toggle()
+        recognizeSpeech()
+        instructionLabel.text = "Нажми, чтобы завершить вопрос"
         waveformView.isHidden.toggle()
         recordButton.isHidden.toggle()
         answerLabel.text = ""
+        synth.stopSpeaking(at: AVSpeechBoundary.immediate)
     }
 
     func setSessionPlayerOn() {
@@ -159,7 +156,6 @@ class SiriViewController: UIViewController {
 
         recordedString = ""
         instructionLabel.text = "Нажми, чтобы задать вопрос"
-        isRecording.toggle()
         waveformView.isHidden.toggle()
         recordButton.isHidden.toggle()
 
