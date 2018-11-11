@@ -16,6 +16,7 @@ class ConcertsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        setupNavigationController()
     }
 
     // MARK: - Private methods
@@ -31,6 +32,13 @@ class ConcertsTableViewController: UITableViewController {
         }
     }
 
+    private func setupNavigationController() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(color: .white), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.view.backgroundColor = .clear
+        navigationController?.navigationBar.isHidden = false
+    }
 
     // MARK: - Table view data source
 
