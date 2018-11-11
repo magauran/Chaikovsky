@@ -174,8 +174,6 @@ extension RecognizerViewController: ARSCNViewDelegate {
 
                 let size = imageAnchor.referenceImage.physicalSize
 
-                let artistName = String(name.split(separator: "-").first!)
-
                 let plane = SCNPlane(width: size.width, height: size.height)
                 let image = UIImage(named: "\(name)-origin")
                 if image != nil {
@@ -188,12 +186,13 @@ extension RecognizerViewController: ARSCNViewDelegate {
                 }
 
                 self.foundedPortraits.append(name)
+            }
 
-                if self.currentArtist.imageName != artistName || !self.floatingPanelIsShown || self.fpc.position == .tip {
-                    self.currentArtist = Artist(imageName: artistName)
-                    self.showFloatingPanel()
-                }
+            let artistName = String(name.split(separator: "-").first!)
 
+            if self.currentArtist.imageName != artistName || !self.floatingPanelIsShown || self.fpc.position == .tip {
+                self.currentArtist = Artist(imageName: artistName)
+                self.showFloatingPanel()
             }
         }
     }

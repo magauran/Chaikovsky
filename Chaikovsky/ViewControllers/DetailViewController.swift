@@ -41,6 +41,10 @@ class DetailViewController: UIViewController {
         setupHeaders()
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
+
     // MARK: - Private methods
 
     private func setupNavigationBar() {
