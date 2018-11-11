@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
         case concerts
     }
 
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: - Lifecycle

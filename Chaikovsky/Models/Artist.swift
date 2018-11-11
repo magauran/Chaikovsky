@@ -61,7 +61,7 @@ class Artist {
             self.description = "Русский композитор, пианист, дирижёр"
             self.imageName = imageName
             self.serverName = "Рахманинов"
-        default:
+        case "chaikovsky":
             self.shortBio = """
             Родился 7 мая 1840 г. в селении при Камско-Воткинском заводе (ныне город Воткинск,
             Удмуртия) в семье горного инженера. В 1850 г. семья переехала в Петербург, и Чайковский поступил в Училище правоведения, которое окончил в 1859 г.
@@ -82,7 +82,16 @@ class Artist {
             self.description = "Великий русский композитор"
             self.imageName = imageName
             self.serverName = "Чайковский"
+        default:
+            self.shortBio = """
+            Это Ольга Бузова!
+            """
+            self.name = "Бузова Оля"
+            self.description = "Очень талантливая певица"
+            self.imageName = imageName
+            self.serverName = "Бузова"
         }
+
     }
 
     var songs: [Song] {
@@ -93,7 +102,7 @@ class Artist {
             } else if self.imageName == "rakhmaninov" {
                 return [Song(title: "RachDayssmall", fileName: "RachDayssmall")]
             } else {
-                return []
+                return [Song(title: "Мало половин", fileName: "Ольга Бузова – Мало Половин")]
             }
         }
     }

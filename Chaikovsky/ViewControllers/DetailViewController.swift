@@ -18,11 +18,15 @@ class DetailViewController: UIViewController {
         case concerts
     }
 
+    // MARK: - Properties
+
     var artist = Artist()
     var stretchyHeader: ArtistHeaderView!
 
     @IBOutlet weak var siriButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()

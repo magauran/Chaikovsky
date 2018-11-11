@@ -151,12 +151,6 @@ extension RecognizerViewController: ARSCNViewDelegate {
 
     // MARK: - ARSCNViewDelegate
 
-//    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-//        if let imageAnchor = anchor as? ARImageAnchor {
-//            handleFoundImage(imageAnchor, node)
-//        }
-//    }
-
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         if let imageAnchor = anchor as? ARImageAnchor {
             handleFoundImage(imageAnchor, node)
