@@ -327,53 +327,111 @@
                                     <outletCollection property="gestureRecognizers" destination="Q0M-hV-c7o" appends="YES" id="tOz-86-Q7y"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кто такой чайковский?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbZ-QN-4Mx">
-                                <rect key="frame" x="10" y="84" width="300" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wW-nS-g9C">
+                                <rect key="frame" x="0.0" y="64" width="320" height="321"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ynx-wL-zwh">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="150.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кто такой чайковский?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbZ-QN-4Mx">
+                                                <rect key="frame" x="10" y="25" width="194" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пётр Ильч" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHK-sT-Cgk">
+                                                <rect key="frame" x="210" y="76.5" width="100" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="250" constant="128" id="3PF-JH-XtU"/>
+                                            <constraint firstItem="HHK-sT-Cgk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ynx-wL-zwh" secondAttribute="leading" constant="10" id="C7K-WM-biG"/>
+                                            <constraint firstItem="PbZ-QN-4Mx" firstAttribute="top" secondItem="Ynx-wL-zwh" secondAttribute="top" constant="25" id="fcD-C4-yEW"/>
+                                            <constraint firstAttribute="trailing" secondItem="HHK-sT-Cgk" secondAttribute="trailing" constant="10" id="hfc-Wg-ljk"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="HHK-sT-Cgk" secondAttribute="bottom" constant="50" id="hsy-87-oqI"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PbZ-QN-4Mx" secondAttribute="trailing" constant="10" id="m1X-pg-oYn"/>
+                                            <constraint firstItem="HHK-sT-Cgk" firstAttribute="top" secondItem="PbZ-QN-4Mx" secondAttribute="bottom" constant="30" id="meB-E6-sd2"/>
+                                            <constraint firstItem="PbZ-QN-4Mx" firstAttribute="leading" secondItem="Ynx-wL-zwh" secondAttribute="leading" constant="10" id="vx4-Ir-wDm"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ynx-wL-zwh" firstAttribute="top" secondItem="2wW-nS-g9C" secondAttribute="top" id="V8n-GC-INh"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ynx-wL-zwh" secondAttribute="trailing" id="X8A-h7-xnm"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ynx-wL-zwh" secondAttribute="bottom" id="YRu-Ue-8xV"/>
+                                    <constraint firstItem="Ynx-wL-zwh" firstAttribute="width" secondItem="2wW-nS-g9C" secondAttribute="width" id="Yjw-XM-75Q"/>
+                                    <constraint firstItem="Ynx-wL-zwh" firstAttribute="leading" secondItem="2wW-nS-g9C" secondAttribute="leading" id="dOh-6A-G5q"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="pLi-Mm-Nbc" id="IXj-ZI-5Al"/>
+                                </connections>
+                            </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нажми, чтобы задать вопрос" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0VP-zN-uSR">
-                                <rect key="frame" x="43" y="416.5" width="234.5" height="20.5"/>
+                                <rect key="frame" x="43" y="415" width="234.5" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="Dbj-0o-QdR"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WRl-g0-CfL">
-                                <rect key="frame" x="10" y="84" width="300" height="267"/>
+                                <rect key="frame" x="10" y="84" width="300" height="266"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Расскажи о филармонии" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n77-Pw-oP8">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="vqu-Sd-54p"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Можно ли на концерт с ребёнком?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qb-Eo-WrL">
                                         <rect key="frame" x="0.0" y="39" width="300" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="P01-Cz-2ld"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подскажите электронную почту" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8d-fP-Y2p">
                                         <rect key="frame" x="0.0" y="102" width="300" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="Q5m-xH-gch"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Расписание работы" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxD-TI-kuX">
-                                        <rect key="frame" x="0.0" y="165" width="300" height="24"/>
+                                        <rect key="frame" x="0.0" y="165" width="300" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="klq-fQ-mQH"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как позвонить в филармонию?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HvD-zI-6FA">
-                                        <rect key="frame" x="0.0" y="204" width="300" height="24"/>
+                                        <rect key="frame" x="0.0" y="203" width="300" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="qsV-it-c7Z"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="И многое другое..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNP-y7-ZGc" userLabel="И многое другое...">
-                                        <rect key="frame" x="0.0" y="243" width="300" height="24"/>
+                                        <rect key="frame" x="0.0" y="242" width="300" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="MDT-t8-0ph"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -383,26 +441,31 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="2wW-nS-g9C" firstAttribute="width" secondItem="iPa-RR-XY6" secondAttribute="width" id="028-hm-evE"/>
+                            <constraint firstItem="2wW-nS-g9C" firstAttribute="leading" secondItem="iPa-RR-XY6" secondAttribute="leading" id="3nn-pt-g9h"/>
+                            <constraint firstItem="iPa-RR-XY6" firstAttribute="top" secondItem="2wW-nS-g9C" secondAttribute="top" id="8LD-bf-tYg"/>
                             <constraint firstItem="g73-2I-2F0" firstAttribute="centerX" secondItem="iPa-RR-XY6" secondAttribute="centerX" id="A24-H9-rNo"/>
                             <constraint firstItem="WRl-g0-CfL" firstAttribute="leading" secondItem="iPa-RR-XY6" secondAttribute="leading" constant="10" id="ArC-h6-O3m"/>
                             <constraint firstItem="WRl-g0-CfL" firstAttribute="top" secondItem="iPa-RR-XY6" secondAttribute="top" constant="20" id="CEw-Dy-5Le"/>
                             <constraint firstItem="iPa-RR-XY6" firstAttribute="bottom" secondItem="g73-2I-2F0" secondAttribute="bottom" constant="35" id="Fgs-rJ-gLP"/>
-                            <constraint firstItem="PbZ-QN-4Mx" firstAttribute="leading" secondItem="iPa-RR-XY6" secondAttribute="leading" constant="10" id="M2S-Mm-0Tg"/>
                             <constraint firstItem="DKY-2A-Dqp" firstAttribute="leading" secondItem="iPa-RR-XY6" secondAttribute="leading" id="RdI-yv-feT"/>
-                            <constraint firstItem="iPa-RR-XY6" firstAttribute="trailing" secondItem="PbZ-QN-4Mx" secondAttribute="trailing" constant="10" id="VTc-k3-8em"/>
                             <constraint firstItem="DKY-2A-Dqp" firstAttribute="trailing" secondItem="iPa-RR-XY6" secondAttribute="trailing" id="XkC-TU-MVS"/>
                             <constraint firstItem="0VP-zN-uSR" firstAttribute="centerX" secondItem="iPa-RR-XY6" secondAttribute="centerX" id="aVz-jq-Btd"/>
+                            <constraint firstItem="iPa-RR-XY6" firstAttribute="trailing" secondItem="2wW-nS-g9C" secondAttribute="trailing" id="cWJ-Ap-EPr"/>
                             <constraint firstItem="DKY-2A-Dqp" firstAttribute="top" secondItem="0VP-zN-uSR" secondAttribute="bottom" constant="16" id="dTr-fz-uwN"/>
+                            <constraint firstItem="0VP-zN-uSR" firstAttribute="top" secondItem="WRl-g0-CfL" secondAttribute="bottom" constant="65" id="hgy-QA-Lsk"/>
                             <constraint firstItem="iPa-RR-XY6" firstAttribute="bottom" secondItem="DKY-2A-Dqp" secondAttribute="bottom" constant="15" id="mug-vm-blP"/>
+                            <constraint firstItem="0VP-zN-uSR" firstAttribute="top" secondItem="2wW-nS-g9C" secondAttribute="bottom" constant="30" id="pMc-Gf-1sw"/>
                             <constraint firstItem="iPa-RR-XY6" firstAttribute="trailing" secondItem="WRl-g0-CfL" secondAttribute="trailing" constant="10" id="qud-4x-rRo"/>
-                            <constraint firstItem="PbZ-QN-4Mx" firstAttribute="top" secondItem="iPa-RR-XY6" secondAttribute="top" constant="20" id="u44-dG-pIn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iPa-RR-XY6"/>
                     </view>
                     <connections>
+                        <outlet property="answerLabel" destination="HHK-sT-Cgk" id="RJV-Hb-QID"/>
                         <outlet property="instructionLabel" destination="0VP-zN-uSR" id="kr0-Oe-RWg"/>
                         <outlet property="questionLabel" destination="PbZ-QN-4Mx" id="HQb-81-ASK"/>
                         <outlet property="recordButton" destination="g73-2I-2F0" id="V9N-I1-IBb"/>
+                        <outlet property="scrollView" destination="2wW-nS-g9C" id="80Y-y7-a91"/>
                         <outlet property="tipsStackView" destination="WRl-g0-CfL" id="aLH-Mv-C7W"/>
                         <outlet property="waveformView" destination="DKY-2A-Dqp" id="gXe-EB-TfE"/>
                     </connections>

@@ -25,6 +25,8 @@ class SiriViewController: UIViewController {
     @IBOutlet weak var tipsStackView: UIStackView!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet private weak var questionLabel: UILabel!
+    @IBOutlet weak var answerLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
 
     @IBOutlet weak var instructionLabel: UILabel!
     let audioEngine = AVAudioEngine()
@@ -36,13 +38,19 @@ class SiriViewController: UIViewController {
         super.viewDidLoad()
         requestSpeechAuthorization()
         questionLabel.text = ""
+        answerLabel.text = ""
         setupNavigationController()
         setupWaveformView()
+        scrollView.contentSize.width = view.frame.width
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         synth.stopSpeaking(at: AVSpeechBoundary.immediate)
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
 
     @objc
@@ -65,6 +73,7 @@ class SiriViewController: UIViewController {
         isRecording.toggle()
         waveformView.isHidden.toggle()
         recordButton.isHidden.toggle()
+        answerLabel.text = ""
     }
 
     func setSessionPlayerOn() {
@@ -82,7 +91,6 @@ class SiriViewController: UIViewController {
     private func speak(text: String) {
         let utterance = AVSpeechUtterance(string: text)
         utterance.voice = AVSpeechSynthesisVoice(language: "ru-RU")
-
         synth.speak(utterance)
     }
 
@@ -108,17 +116,9 @@ class SiriViewController: UIViewController {
         }
         recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, error in
             if let result = result {
-
                 let bestString = result.bestTranscription.formattedString
                 self.recordedString = bestString
                 self.questionLabel.text = bestString
-
-                var lastString: String = ""
-                for segment in result.bestTranscription.segments {
-                    let indexTo = bestString.index(bestString.startIndex, offsetBy: segment.substringRange.location)
-                    lastString = String(bestString[indexTo...])
-                }
-                self.checkForColorsSaid(resultString: lastString)
             }
         })
     }
@@ -126,28 +126,6 @@ class SiriViewController: UIViewController {
     func requestSpeechAuthorization() {
         SFSpeechRecognizer.requestAuthorization { authStatus in
             print(authStatus)
-        }
-    }
-
-    func checkForColorsSaid(resultString: String) {
-        switch resultString {
-        case "красный":
-            view.backgroundColor = UIColor.red
-        case "оранжевый":
-            view.backgroundColor = UIColor.orange
-        case "жёлтый":
-            view.backgroundColor = UIColor.yellow
-        case "зелёный":
-            view.backgroundColor = UIColor.green
-        case "синий":
-            view.backgroundColor = UIColor.blue
-        case "чёрный":
-            view.backgroundColor = UIColor.black
-        case "белый":
-            view.backgroundColor = UIColor.white
-        case "серый":
-            view.backgroundColor = UIColor.gray
-        default: break
         }
     }
 
@@ -169,9 +147,13 @@ class SiriViewController: UIViewController {
         let finalText = recordedString
         print(finalText)
         setSessionPlayerOn()
+
         service.ask(question: finalText) { [weak self] (answer) in
             if let ans = answer {
                 self?.speak(text: ans)
+                DispatchQueue.main.async {
+                    self?.answerLabel.text = ans
+                }
             }
         }
 
@@ -186,8 +168,10 @@ class SiriViewController: UIViewController {
 
 }
 
-extension SiriViewController: SFSpeechRecognizerDelegate {
+extension SiriViewController: UIScrollViewDelegate {
 
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollView.contentOffset.x = 0.0
+    }
 
 }
