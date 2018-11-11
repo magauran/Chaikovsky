@@ -206,6 +206,94 @@
             </objects>
             <point key="canvasLocation" x="3024" y="285"/>
         </scene>
+        <!--Концерты-->
+        <scene sceneID="xJS-DI-SNf">
+            <objects>
+                <tableViewController title="Концерты" id="Hhi-vf-1er" customClass="ConcertsTableViewController" customModule="Chaikovsky" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MX4-n9-iu5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConcertTableViewCell" rowHeight="182" id="E3v-WX-KCJ" customClass="ConcertTableViewCell" customModule="Chaikovsky" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="182"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E3v-WX-KCJ" id="GjE-cP-y7d">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="181.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dh2-dR-vw7" customClass="DesignableView" customModule="Chaikovsky" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="11" width="288" height="160"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Академический симфонический концерт" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5p-qe-etK">
+                                                    <rect key="frame" x="10" y="5" width="268" height="65"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 декабря" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpX-f9-bpJ">
+                                                    <rect key="frame" x="187" y="130" width="91" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="Q3U-S8-v6S"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Чайковский, Рахманинов и многие многие другие" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFi-sk-Ktr">
+                                                    <rect key="frame" x="10" y="75" width="268" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="KHe-Jc-2aD"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="yFi-sk-Ktr" secondAttribute="trailing" constant="10" id="5bQ-SS-bbM"/>
+                                                <constraint firstAttribute="trailing" secondItem="FpX-f9-bpJ" secondAttribute="trailing" constant="10" id="PPM-7f-9dz"/>
+                                                <constraint firstItem="yFi-sk-Ktr" firstAttribute="top" secondItem="P5p-qe-etK" secondAttribute="bottom" constant="5" id="Tvi-VP-mW0"/>
+                                                <constraint firstItem="P5p-qe-etK" firstAttribute="top" secondItem="dh2-dR-vw7" secondAttribute="top" constant="5" id="diZ-fN-H5D"/>
+                                                <constraint firstAttribute="bottom" secondItem="FpX-f9-bpJ" secondAttribute="bottom" constant="5" id="drA-i3-tch"/>
+                                                <constraint firstItem="P5p-qe-etK" firstAttribute="leading" secondItem="dh2-dR-vw7" secondAttribute="leading" constant="10" id="j1N-9V-ZhP"/>
+                                                <constraint firstItem="FpX-f9-bpJ" firstAttribute="top" secondItem="yFi-sk-Ktr" secondAttribute="bottom" constant="5" id="nuc-84-b2e"/>
+                                                <constraint firstAttribute="trailing" secondItem="P5p-qe-etK" secondAttribute="trailing" constant="10" id="sJV-GQ-Yw6"/>
+                                                <constraint firstItem="yFi-sk-Ktr" firstAttribute="leading" secondItem="dh2-dR-vw7" secondAttribute="leading" constant="10" id="t2G-je-FFz"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dh2-dR-vw7" firstAttribute="top" secondItem="GjE-cP-y7d" secondAttribute="topMargin" id="4by-3D-HqT"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="dh2-dR-vw7" secondAttribute="trailing" id="Bju-vH-eNl"/>
+                                        <constraint firstItem="dh2-dR-vw7" firstAttribute="leading" secondItem="GjE-cP-y7d" secondAttribute="leadingMargin" id="Hb1-Jb-gnM"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="dh2-dR-vw7" secondAttribute="bottom" id="uFZ-nt-IxB"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="FpX-f9-bpJ" id="IYK-OY-HGm"/>
+                                    <outlet property="designableView" destination="dh2-dR-vw7" id="UEL-5D-Z3R"/>
+                                    <outlet property="membersLabel" destination="yFi-sk-Ktr" id="2RM-HQ-vrP"/>
+                                    <outlet property="nameLabel" destination="P5p-qe-etK" id="lCE-nO-OYb"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Hhi-vf-1er" id="5Nf-mx-2m6"/>
+                            <outlet property="delegate" destination="Hhi-vf-1er" id="sgm-en-6WI"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NsW-LE-En2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1466.25" y="942.25352112676057"/>
+        </scene>
         <!--Голосовой помощник-->
         <scene sceneID="yfS-tI-ayD">
             <objects>
@@ -237,7 +325,7 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кто такой чайковский?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbZ-QN-4Mx">
-                                <rect key="frame" x="10" y="131" width="300" height="24"/>
+                                <rect key="frame" x="10" y="84" width="300" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -457,6 +545,7 @@
                     <connections>
                         <segue destination="BV1-FR-VrT" kind="show" identifier="RecognizerViewController" id="gay-Zs-5D9"/>
                         <segue destination="pLi-Mm-Nbc" kind="show" identifier="SiriViewController" id="uOD-NA-eqd"/>
+                        <segue destination="Hhi-vf-1er" kind="show" identifier="ConcertsTableViewController" id="aCC-b8-y9v"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2q9-cy-Pud" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -489,7 +578,7 @@
         <image name="siri" width="525" height="525"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uOD-NA-eqd"/>
+        <segue reference="eg2-BH-qXy"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.047058823529411764" green="0.44705882352941173" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

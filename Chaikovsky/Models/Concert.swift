@@ -46,8 +46,8 @@ extension Concert: Decodable {
         let program: String = try container.decode(String.self, forKey: .program)
         let site: String = try container.decode(String.self, forKey: .site)
         let photo: String = try container.decode(String.self, forKey: .photo)
-        let members: String = try container.decode(String.self, forKey: .members)
-
+        var members: String = try container.decode(String.self, forKey: .members)
+        members = members.replacingOccurrences(of: "\n", with: " ")
         self.init(title: title, date: date, hall: hall, buyUrl: buyUrl, program: program, site: site, photo: photo, members: members)
     }
 
