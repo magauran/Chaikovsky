@@ -110,7 +110,7 @@ extension DetailViewController: UITableViewDataSource {
         guard let enumSection = Section(rawValue: section) else { return 0 }
         switch enumSection {
         case .music:
-            return Song.demo.count
+            return artist.songs.count
         default:
             return 1
         }
@@ -127,7 +127,7 @@ extension DetailViewController: UITableViewDataSource {
         case .music:
             let cell: MusicTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             guard let player = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: AudioPlayerViewController.className) as? AudioPlayerViewController else { return UITableViewCell()}
-            player.song = Song.demo[indexPath.row]
+            player.song = artist.songs[indexPath.row]
             cell.playerController = player
             addChild(player)
             cell.playerController?.didMove(toParent: self)

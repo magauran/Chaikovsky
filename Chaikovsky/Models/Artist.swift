@@ -85,4 +85,17 @@ class Artist {
         }
     }
 
+    var songs: [Song] {
+        get {
+            if self.imageName == "chaikovsky" {
+                return [Song(title: "Неаполитанская песенка", fileName: "p-i-chaykovskiy-neapolitanskaya-pesenka"),
+                        Song(title: "Валерий Гергиев и Денис Мацуев", fileName: "PromoTchaikovskyMatsuevGergiev")]
+            } else if self.imageName == "rakhmaninov" {
+                return [Song(title: "RachDayssmall", fileName: "RachDayssmall")]
+            } else {
+                return []
+            }
+        }
+    }
+
 }
