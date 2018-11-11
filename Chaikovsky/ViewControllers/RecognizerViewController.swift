@@ -174,35 +174,27 @@ extension RecognizerViewController: ARSCNViewDelegate {
 
                 let size = imageAnchor.referenceImage.physicalSize
 
+                let artistName = String(name.split(separator: "-").first!)
+
                 let plane = SCNPlane(width: size.width, height: size.height)
                 let image = UIImage(named: "\(name)-origin")
-                let imageNode = SCNNode(geometry: plane)
-                imageNode.geometry?.firstMaterial?.diffuse.contents = image
-                imageNode.name = name
-                imageNode.opacity = 1.0
-                imageNode.eulerAngles.x = -.pi / 2
-                node.addChildNode(imageNode)
+                if image != nil {
+                    let imageNode = SCNNode(geometry: plane)
+                    imageNode.geometry?.firstMaterial?.diffuse.contents = image
+                    imageNode.name = name
+                    imageNode.opacity = 1.0
+                    imageNode.eulerAngles.x = -.pi / 2
+                    node.addChildNode(imageNode)
+                }
 
                 self.foundedPortraits.append(name)
 
-//                let annotationPlane = SCNPlane(width: plane.width * 1.5, height: plane.width * 0.5)
-//                let annotationNode = SCNNode(geometry: annotationPlane)
-//                let annotationView = PopUpView(frame: CGRect(x: 0, y: 0, width: 300, height: 120))
-//                annotationView.configure(with: "Какой-то текст")
-//                annotationNode.geometry?.firstMaterial?.diffuse.contents = annotationView
-//                annotationNode.eulerAngles.x = -.pi / 2
-//                // TODO: calculate delta
-//                let delta = simd_float3(0, 0, -5.5)
-//                annotationNode.simdPosition += delta
-//                node.addChildNode(annotationNode)
+                if self.currentArtist.imageName != artistName || !self.floatingPanelIsShown || self.fpc.position == .tip {
+                    self.currentArtist = Artist(imageName: artistName)
+                    self.showFloatingPanel()
+                }
+
             }
-
-
-            if self.currentArtist.imageName != name || !self.floatingPanelIsShown || self.fpc.position == .tip {
-                self.currentArtist = Artist(imageName: name)
-                self.showFloatingPanel()
-            }
-
         }
     }
 
