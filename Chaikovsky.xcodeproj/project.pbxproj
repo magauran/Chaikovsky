@@ -15,7 +15,7 @@
 		8A4017D22195CA4F000C7627 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4017D02195CA4F000C7627 /* Main.storyboard */; };
 		8A4017D42195CA55000C7627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4017D32195CA55000C7627 /* Assets.xcassets */; };
 		8A4017D72195CA55000C7627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4017D52195CA55000C7627 /* LaunchScreen.storyboard */; };
-		8A4017DF2195CCDA000C7627 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017DE2195CCDA000C7627 /* HomeTableViewController.swift */; };
+		8A4017DF2195CCDA000C7627 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017DE2195CCDA000C7627 /* HomeViewController.swift */; };
 		8A4017E12195CFFD000C7627 /* UITableViewCell+Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017E02195CFFD000C7627 /* UITableViewCell+Reuse.swift */; };
 		8A4017E42195D02D000C7627 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017E32195D02D000C7627 /* NSObject+ClassName.swift */; };
 		8A4017E82195D0C1000C7627 /* FeatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4017E72195D0C0000C7627 /* FeatureTableViewCell.swift */; };
@@ -56,7 +56,7 @@
 		8A4017D32195CA55000C7627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A4017D62195CA55000C7627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A4017D82195CA55000C7627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8A4017DE2195CCDA000C7627 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		8A4017DE2195CCDA000C7627 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8A4017E02195CFFD000C7627 /* UITableViewCell+Reuse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Reuse.swift"; sourceTree = "<group>"; };
 		8A4017E32195D02D000C7627 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		8A4017E72195D0C0000C7627 /* FeatureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTableViewCell.swift; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 		8A4017F32195F216000C7627 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8A4017DE2195CCDA000C7627 /* HomeTableViewController.swift */,
+				8A4017DE2195CCDA000C7627 /* HomeViewController.swift */,
 				8A4017CE2195CA4F000C7627 /* RecognizerViewController.swift */,
 				8A4017F52195F274000C7627 /* DetailViewController.swift */,
 				8AD69D562196F50400E5BB68 /* SiriViewController.swift */,
@@ -376,7 +376,7 @@
 				8A4017EE2195E954000C7627 /* PopUpView.swift in Sources */,
 				8A66EB1A219781B8009A0D6A /* UIDevice+Vibrate.swift in Sources */,
 				8A243A9E2197C3430073614D /* ConcertTableViewController.swift in Sources */,
-				8A4017DF2195CCDA000C7627 /* HomeTableViewController.swift in Sources */,
+				8A4017DF2195CCDA000C7627 /* HomeViewController.swift in Sources */,
 				8A4017CF2195CA4F000C7627 /* RecognizerViewController.swift in Sources */,
 				8AD69D572196F50400E5BB68 /* SiriViewController.swift in Sources */,
 				8A4017F22195F1E3000C7627 /* DetailFloatingLayout.swift in Sources */,

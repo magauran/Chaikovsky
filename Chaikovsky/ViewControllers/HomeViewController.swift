@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeTableViewController: UITableViewController {
+class HomeViewController: UIViewController {
 
     enum Section: Int, CaseIterable {
         case ar
@@ -17,17 +17,25 @@ class HomeTableViewController: UITableViewController {
         case concerts
     }
 
+    @IBOutlet weak var tableView: UITableView!
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Chaikovsky"
         setupHeaders()
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setupNavigationController()
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
     // MARK: - IBActions
@@ -36,29 +44,27 @@ class HomeTableViewController: UITableViewController {
 
     // MARK: - Private methods
 
-    private func setupNavigationController() {
-        navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.setBackgroundImage(UIImage(color: .white), for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = UINavigationBar().shadowImage
-    }
-
     private func setupHeaders() {
         let headerNib = UINib.init(nibName: DetailTableHeaderView.className, bundle: nil)
+
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: DetailTableHeaderView.className)
     }
 
+}
+
+extension HomeViewController: UITableViewDataSource {
+
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return Section.allCases.count
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: FeatureTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         guard let enumSection = Section(rawValue: indexPath.section) else { return UITableViewCell() }
         switch enumSection {
@@ -75,7 +81,7 @@ class HomeTableViewController: UITableViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: DetailTableHeaderView.className) as? DetailTableHeaderView {
             guard let enumSection = Section(rawValue: section) else { return nil }
             switch enumSection {
@@ -93,9 +99,13 @@ class HomeTableViewController: UITableViewController {
         return nil
     }
 
+}
+
+extension HomeViewController: UITableViewDelegate {
+
     // MARK: - Table view delegate
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let enumSection = Section(rawValue: indexPath.section) else { return }
         switch enumSection {
         case .ar:
@@ -110,8 +120,8 @@ class HomeTableViewController: UITableViewController {
         }
     }
 
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 35
     }
-
+    
 }
