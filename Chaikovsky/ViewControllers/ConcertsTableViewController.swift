@@ -20,7 +20,7 @@ class ConcertsTableViewController: UITableViewController {
     // MARK: - Private methods
 
     private func loadData() {
-        NetworkService().playbill(composer: "Чайковский") { (conc) in
+        NetworkService().playbill(composer: "Рахманинов") { (conc) in
             if let unwrappedConcerts = conc {
                 self.concerts = unwrappedConcerts
                 DispatchQueue.main.async {
@@ -41,7 +41,6 @@ class ConcertsTableViewController: UITableViewController {
         return concerts.count
     }
 
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ConcertTableViewCell = tableView.dequeueReusableCell(for: indexPath)
 
@@ -53,7 +52,7 @@ class ConcertsTableViewController: UITableViewController {
         formatter.timeStyle = .none
         formatter.locale = Locale(identifier: "RU-ru")
         cell.dateLabel.text = formatter.string(from: concert.date)
-        cell.designableView.backgroundColor = ColorHash(concert.name, [CGFloat(1.0)], [CGFloat(1.0)]).color
+        cell.designableView.backgroundColor = ColorHash(concert.title, [CGFloat(0.3)], [CGFloat(0.9)]).color
         return cell
     }
 
@@ -63,4 +62,17 @@ class ConcertsTableViewController: UITableViewController {
         return UITableView.automaticDimension
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: ConcertTableViewController.className, sender: concerts[indexPath.row])
+    }
+
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == ConcertTableViewController.className {
+            if let destinationVC = segue.destination as? ConcertTableViewController, let concert = sender as? Concert {
+                destinationVC.concert = concert
+            }
+        }
+    }
 }

@@ -55,8 +55,13 @@ class NetworkService: NSObject, URLSessionDelegate {
         }.resume()
     }
 
-    func playbill(composer: String, completionHandler: @escaping ([Concert]?) -> Void) {
-        let urlString = "\(NetworkService.urlString)/playbill?composer=\(composer)".encodeUrl
+    func playbill(composer: String?, completionHandler: @escaping ([Concert]?) -> Void) {
+        var urlString = "\(NetworkService.urlString)/playbill"
+        if let comp = composer {
+            urlString +=  "?composer=\(comp)"
+        }
+        urlString = urlString.encodeUrl
+
         guard let serviceUrl = URL(string: urlString) else {
             completionHandler(nil)
             return
