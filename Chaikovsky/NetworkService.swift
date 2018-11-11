@@ -8,14 +8,30 @@
 
 import Foundation
 
+extension String{
+    var encodeUrl : String {
+        return self.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
+    }
+    var decodeUrl : String {
+        return self.removingPercentEncoding!
+    }
+}
+
 class NetworkService: NSObject, URLSessionDelegate {
 
     typealias Answer = String
     typealias AnswerHandler = (Answer?) -> Void
-    static let urlString = "https://94.130.19.98:5000/textProcessing"
+    static let urlString = "https://94.130.19.98:5000"
+
+    lazy var session: URLSession = {
+        let sessionConfiguration = URLSessionConfiguration.default
+        let session = URLSession(configuration: sessionConfiguration, delegate: self, delegateQueue: nil)
+        return session
+    }()
+
 
     func ask(question: String, completionHandler: @escaping AnswerHandler) {
-        guard let serviceUrl = URL(string: NetworkService.urlString) else {
+        guard let serviceUrl = URL(string: "\(NetworkService.urlString)/textProcessing") else {
             completionHandler(nil)
             return
         }
@@ -29,9 +45,6 @@ class NetworkService: NSObject, URLSessionDelegate {
         }
         request.httpBody = httpBody
 
-        let sessionConfiguration = URLSessionConfiguration.default
-        let session = URLSession(configuration: sessionConfiguration, delegate: self, delegateQueue: nil)
-
         session.dataTask(with: request) { (data, response, error) in
             if let data = data,
                 let httpResponse = response as? HTTPURLResponse,
@@ -41,6 +54,33 @@ class NetworkService: NSObject, URLSessionDelegate {
             }
         }.resume()
     }
+
+    func playbill(composer: String, completionHandler: @escaping ([Concert]?) -> Void) {
+        let urlString = "\(NetworkService.urlString)/playbill?composer=\(composer)".encodeUrl
+        guard let serviceUrl = URL(string: urlString) else {
+            completionHandler(nil)
+            return
+        }
+        var request = URLRequest(url: serviceUrl)
+        request.httpMethod = "GET"
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+
+        session.dataTask(with: request) { (data, response, error) in
+            if let data = data,
+                let httpResponse = response as? HTTPURLResponse,
+                httpResponse.statusCode == 200 {
+                do {
+                    let concerts = try JSONDecoder().decode([Concert].self, from: data)
+                    completionHandler(concerts)
+                } catch {
+                    completionHandler(nil)
+                    return
+                }
+            }
+            }.resume()
+    }
+
+    // MARK: - URL Session delegate
 
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
